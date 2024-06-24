@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'firestore_user.dart';
+part of 'user_profile.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-FirestoreUser _$FirestoreUserFromJson(Map<String, dynamic> json) {
-  return _FirestoreUser.fromJson(json);
+UserProfile _$UserProfileFromJson(Map<String, dynamic> json) {
+  return _UserProfile.fromJson(json);
 }
 
 /// @nodoc
-mixin _$FirestoreUser {
+mixin _$UserProfile {
   String get uid => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
@@ -39,15 +39,15 @@ mixin _$FirestoreUser {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FirestoreUserCopyWith<FirestoreUser> get copyWith =>
+  $UserProfileCopyWith<UserProfile> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FirestoreUserCopyWith<$Res> {
-  factory $FirestoreUserCopyWith(
-          FirestoreUser value, $Res Function(FirestoreUser) then) =
-      _$FirestoreUserCopyWithImpl<$Res, FirestoreUser>;
+abstract class $UserProfileCopyWith<$Res> {
+  factory $UserProfileCopyWith(
+          UserProfile value, $Res Function(UserProfile) then) =
+      _$UserProfileCopyWithImpl<$Res, UserProfile>;
   @useResult
   $Res call(
       {String uid,
@@ -66,9 +66,9 @@ abstract class $FirestoreUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FirestoreUserCopyWithImpl<$Res, $Val extends FirestoreUser>
-    implements $FirestoreUserCopyWith<$Res> {
-  _$FirestoreUserCopyWithImpl(this._value, this._then);
+class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
+    implements $UserProfileCopyWith<$Res> {
+  _$UserProfileCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -150,11 +150,11 @@ class _$FirestoreUserCopyWithImpl<$Res, $Val extends FirestoreUser>
 }
 
 /// @nodoc
-abstract class _$$FirestoreUserImplCopyWith<$Res>
-    implements $FirestoreUserCopyWith<$Res> {
-  factory _$$FirestoreUserImplCopyWith(
-          _$FirestoreUserImpl value, $Res Function(_$FirestoreUserImpl) then) =
-      __$$FirestoreUserImplCopyWithImpl<$Res>;
+abstract class _$$UserProfileImplCopyWith<$Res>
+    implements $UserProfileCopyWith<$Res> {
+  factory _$$UserProfileImplCopyWith(
+          _$UserProfileImpl value, $Res Function(_$UserProfileImpl) then) =
+      __$$UserProfileImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -174,11 +174,11 @@ abstract class _$$FirestoreUserImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FirestoreUserImplCopyWithImpl<$Res>
-    extends _$FirestoreUserCopyWithImpl<$Res, _$FirestoreUserImpl>
-    implements _$$FirestoreUserImplCopyWith<$Res> {
-  __$$FirestoreUserImplCopyWithImpl(
-      _$FirestoreUserImpl _value, $Res Function(_$FirestoreUserImpl) _then)
+class __$$UserProfileImplCopyWithImpl<$Res>
+    extends _$UserProfileCopyWithImpl<$Res, _$UserProfileImpl>
+    implements _$$UserProfileImplCopyWith<$Res> {
+  __$$UserProfileImplCopyWithImpl(
+      _$UserProfileImpl _value, $Res Function(_$UserProfileImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -198,7 +198,7 @@ class __$$FirestoreUserImplCopyWithImpl<$Res>
     Object? deletedAt = freezed,
     Object? deletedBy = freezed,
   }) {
-    return _then(_$FirestoreUserImpl(
+    return _then(_$UserProfileImpl(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -257,8 +257,8 @@ class __$$FirestoreUserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FirestoreUserImpl extends _FirestoreUser {
-  const _$FirestoreUserImpl(
+class _$UserProfileImpl extends _UserProfile {
+  const _$UserProfileImpl(
       {required this.uid,
       required this.username,
       required this.firstName,
@@ -274,8 +274,8 @@ class _$FirestoreUserImpl extends _FirestoreUser {
       this.deletedBy})
       : super._();
 
-  factory _$FirestoreUserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FirestoreUserImplFromJson(json);
+  factory _$UserProfileImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserProfileImplFromJson(json);
 
   @override
   final String uid;
@@ -310,14 +310,14 @@ class _$FirestoreUserImpl extends _FirestoreUser {
 
   @override
   String toString() {
-    return 'FirestoreUser(uid: $uid, username: $username, firstName: $firstName, middleName: $middleName, lastName: $lastName, sectionId: $sectionId, isActive: $isActive, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'UserProfile(uid: $uid, username: $username, firstName: $firstName, middleName: $middleName, lastName: $lastName, sectionId: $sectionId, isActive: $isActive, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FirestoreUserImpl &&
+            other is _$UserProfileImpl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.username, username) ||
                 other.username == username) &&
@@ -366,19 +366,19 @@ class _$FirestoreUserImpl extends _FirestoreUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FirestoreUserImplCopyWith<_$FirestoreUserImpl> get copyWith =>
-      __$$FirestoreUserImplCopyWithImpl<_$FirestoreUserImpl>(this, _$identity);
+  _$$UserProfileImplCopyWith<_$UserProfileImpl> get copyWith =>
+      __$$UserProfileImplCopyWithImpl<_$UserProfileImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FirestoreUserImplToJson(
+    return _$$UserProfileImplToJson(
       this,
     );
   }
 }
 
-abstract class _FirestoreUser extends FirestoreUser {
-  const factory _FirestoreUser(
+abstract class _UserProfile extends UserProfile {
+  const factory _UserProfile(
       {required final String uid,
       required final String username,
       required final String firstName,
@@ -391,11 +391,11 @@ abstract class _FirestoreUser extends FirestoreUser {
       @TimestampNullableConverter() final DateTime? updatedAt,
       final String? updatedBy,
       @TimestampNullableConverter() final DateTime? deletedAt,
-      final String? deletedBy}) = _$FirestoreUserImpl;
-  const _FirestoreUser._() : super._();
+      final String? deletedBy}) = _$UserProfileImpl;
+  const _UserProfile._() : super._();
 
-  factory _FirestoreUser.fromJson(Map<String, dynamic> json) =
-      _$FirestoreUserImpl.fromJson;
+  factory _UserProfile.fromJson(Map<String, dynamic> json) =
+      _$UserProfileImpl.fromJson;
 
   @override
   String get uid;
@@ -428,6 +428,6 @@ abstract class _FirestoreUser extends FirestoreUser {
   String? get deletedBy;
   @override
   @JsonKey(ignore: true)
-  _$$FirestoreUserImplCopyWith<_$FirestoreUserImpl> get copyWith =>
+  _$$UserProfileImplCopyWith<_$UserProfileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

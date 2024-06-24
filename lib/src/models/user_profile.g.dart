@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'firestore_user.dart';
+part of 'user_profile.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FirestoreUserImpl _$$FirestoreUserImplFromJson(Map<String, dynamic> json) =>
-    _$FirestoreUserImpl(
+_$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
+    _$UserProfileImpl(
       uid: json['uid'] as String,
       username: json['username'] as String,
       firstName: json['firstName'] as String,
@@ -26,7 +26,7 @@ _$FirestoreUserImpl _$$FirestoreUserImplFromJson(Map<String, dynamic> json) =>
       deletedBy: json['deletedBy'] as String?,
     );
 
-Map<String, dynamic> _$$FirestoreUserImplToJson(_$FirestoreUserImpl instance) =>
+Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'username': instance.username,
