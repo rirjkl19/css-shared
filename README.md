@@ -1,39 +1,51 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# CSS Shared resources
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+MVP features
+
+- [ ] Teacher can create lessons
+- [ ] Teacher can create quizzes
+- [ ] Teacher can see grades
+- [ ] Teacher can create student accounts
+- [ ] ~~Teacher can see student progress~~
+- [ ] Students can see lessons
+- [ ] Students can take quizzes
+- [ ] Students can see own grades
+
+---
+
+For now:
+
+- [x] Create users for now using the student app (css-app).
+- [ ] Manually create data in the firestore for the lessons and quizzes.
+  - [ ] Create a way to create lessons and quizzes in the admin app (css-admin).
+  - [ ] Create a way to see the grades in the admin app (css-admin).
+  - [ ] Create a way to see the grades in the student app (css-app).
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Project folders should be structured as follows:
+
+```folder
+/css-app
+/css-admin
+/css-shared
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+All the shared resources are in the `css-shared` folder. The shared resources are:
 
-```dart
-const like = 'sample';
-```
+- Models
+- Utilities
+- Themes
+- Constants
+- Components
+
+Note: I was sharing the services and repositories before but I realized that it's not a good idea to share them because they are tightly coupled.
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- The firebase emulators is at the css-app folder and can be run with `firebase emulators:start` or using the tasks.
+- This uses firebase auth, firestore and storage. Should monitor the usage of these services to avoid costs especially the storage and firestore calls in the item analysis.
