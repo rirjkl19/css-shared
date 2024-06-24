@@ -18,8 +18,11 @@ class FirestoreUser with _$FirestoreUser {
     required String? sectionId,
     @Default(true) bool isActive,
     @TimestampConverter() required DateTime createdAt,
+    String? createdBy,
     @TimestampNullableConverter() DateTime? updatedAt,
+    String? updatedBy,
     @TimestampNullableConverter() DateTime? deletedAt,
+    String? deletedBy,
   }) = _FirestoreUser;
 
   factory FirestoreUser.fromJson(Map<String, dynamic> json) => _$FirestoreUserFromJson(json);

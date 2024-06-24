@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'firestore_user.dart';
+part of 'firestore_lesson.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,19 +14,19 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-FirestoreUser _$FirestoreUserFromJson(Map<String, dynamic> json) {
-  return _FirestoreUser.fromJson(json);
+FirestoreLesson _$FirestoreLessonFromJson(Map<String, dynamic> json) {
+  return _FirestoreLesson.fromJson(json);
 }
 
 /// @nodoc
-mixin _$FirestoreUser {
-  String get uid => throw _privateConstructorUsedError;
-  String get username => throw _privateConstructorUsedError;
-  String get firstName => throw _privateConstructorUsedError;
-  String? get middleName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
-  String? get sectionId => throw _privateConstructorUsedError;
-  bool get isActive => throw _privateConstructorUsedError;
+mixin _$FirestoreLesson {
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  Quarter get quarter => throw _privateConstructorUsedError;
+  String? get thumbnailUrl => throw _privateConstructorUsedError;
+  String? get videoUrl => throw _privateConstructorUsedError;
+  String? get fileUrl => throw _privateConstructorUsedError;
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
   String? get createdBy => throw _privateConstructorUsedError;
@@ -39,24 +39,24 @@ mixin _$FirestoreUser {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FirestoreUserCopyWith<FirestoreUser> get copyWith =>
+  $FirestoreLessonCopyWith<FirestoreLesson> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FirestoreUserCopyWith<$Res> {
-  factory $FirestoreUserCopyWith(
-          FirestoreUser value, $Res Function(FirestoreUser) then) =
-      _$FirestoreUserCopyWithImpl<$Res, FirestoreUser>;
+abstract class $FirestoreLessonCopyWith<$Res> {
+  factory $FirestoreLessonCopyWith(
+          FirestoreLesson value, $Res Function(FirestoreLesson) then) =
+      _$FirestoreLessonCopyWithImpl<$Res, FirestoreLesson>;
   @useResult
   $Res call(
-      {String uid,
-      String username,
-      String firstName,
-      String? middleName,
-      String lastName,
-      String? sectionId,
-      bool isActive,
+      {String id,
+      String title,
+      String description,
+      Quarter quarter,
+      String? thumbnailUrl,
+      String? videoUrl,
+      String? fileUrl,
       @TimestampConverter() DateTime createdAt,
       String? createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
@@ -66,9 +66,9 @@ abstract class $FirestoreUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FirestoreUserCopyWithImpl<$Res, $Val extends FirestoreUser>
-    implements $FirestoreUserCopyWith<$Res> {
-  _$FirestoreUserCopyWithImpl(this._value, this._then);
+class _$FirestoreLessonCopyWithImpl<$Res, $Val extends FirestoreLesson>
+    implements $FirestoreLessonCopyWith<$Res> {
+  _$FirestoreLessonCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -78,13 +78,13 @@ class _$FirestoreUserCopyWithImpl<$Res, $Val extends FirestoreUser>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? username = null,
-    Object? firstName = null,
-    Object? middleName = freezed,
-    Object? lastName = null,
-    Object? sectionId = freezed,
-    Object? isActive = null,
+    Object? id = null,
+    Object? title = null,
+    Object? description = null,
+    Object? quarter = null,
+    Object? thumbnailUrl = freezed,
+    Object? videoUrl = freezed,
+    Object? fileUrl = freezed,
     Object? createdAt = null,
     Object? createdBy = freezed,
     Object? updatedAt = freezed,
@@ -93,34 +93,34 @@ class _$FirestoreUserCopyWithImpl<$Res, $Val extends FirestoreUser>
     Object? deletedBy = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: null == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
-      middleName: freezed == middleName
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
+      quarter: null == quarter
+          ? _value.quarter
+          : quarter // ignore: cast_nullable_to_non_nullable
+              as Quarter,
+      thumbnailUrl: freezed == thumbnailUrl
+          ? _value.thumbnailUrl
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      sectionId: freezed == sectionId
-          ? _value.sectionId
-          : sectionId // ignore: cast_nullable_to_non_nullable
+      videoUrl: freezed == videoUrl
+          ? _value.videoUrl
+          : videoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
+      fileUrl: freezed == fileUrl
+          ? _value.fileUrl
+          : fileUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -150,21 +150,21 @@ class _$FirestoreUserCopyWithImpl<$Res, $Val extends FirestoreUser>
 }
 
 /// @nodoc
-abstract class _$$FirestoreUserImplCopyWith<$Res>
-    implements $FirestoreUserCopyWith<$Res> {
-  factory _$$FirestoreUserImplCopyWith(
-          _$FirestoreUserImpl value, $Res Function(_$FirestoreUserImpl) then) =
-      __$$FirestoreUserImplCopyWithImpl<$Res>;
+abstract class _$$FirestoreLessonImplCopyWith<$Res>
+    implements $FirestoreLessonCopyWith<$Res> {
+  factory _$$FirestoreLessonImplCopyWith(_$FirestoreLessonImpl value,
+          $Res Function(_$FirestoreLessonImpl) then) =
+      __$$FirestoreLessonImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String uid,
-      String username,
-      String firstName,
-      String? middleName,
-      String lastName,
-      String? sectionId,
-      bool isActive,
+      {String id,
+      String title,
+      String description,
+      Quarter quarter,
+      String? thumbnailUrl,
+      String? videoUrl,
+      String? fileUrl,
       @TimestampConverter() DateTime createdAt,
       String? createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
@@ -174,23 +174,23 @@ abstract class _$$FirestoreUserImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FirestoreUserImplCopyWithImpl<$Res>
-    extends _$FirestoreUserCopyWithImpl<$Res, _$FirestoreUserImpl>
-    implements _$$FirestoreUserImplCopyWith<$Res> {
-  __$$FirestoreUserImplCopyWithImpl(
-      _$FirestoreUserImpl _value, $Res Function(_$FirestoreUserImpl) _then)
+class __$$FirestoreLessonImplCopyWithImpl<$Res>
+    extends _$FirestoreLessonCopyWithImpl<$Res, _$FirestoreLessonImpl>
+    implements _$$FirestoreLessonImplCopyWith<$Res> {
+  __$$FirestoreLessonImplCopyWithImpl(
+      _$FirestoreLessonImpl _value, $Res Function(_$FirestoreLessonImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? username = null,
-    Object? firstName = null,
-    Object? middleName = freezed,
-    Object? lastName = null,
-    Object? sectionId = freezed,
-    Object? isActive = null,
+    Object? id = null,
+    Object? title = null,
+    Object? description = null,
+    Object? quarter = null,
+    Object? thumbnailUrl = freezed,
+    Object? videoUrl = freezed,
+    Object? fileUrl = freezed,
     Object? createdAt = null,
     Object? createdBy = freezed,
     Object? updatedAt = freezed,
@@ -198,35 +198,35 @@ class __$$FirestoreUserImplCopyWithImpl<$Res>
     Object? deletedAt = freezed,
     Object? deletedBy = freezed,
   }) {
-    return _then(_$FirestoreUserImpl(
-      uid: null == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+    return _then(_$FirestoreLessonImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
-      middleName: freezed == middleName
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
+      quarter: null == quarter
+          ? _value.quarter
+          : quarter // ignore: cast_nullable_to_non_nullable
+              as Quarter,
+      thumbnailUrl: freezed == thumbnailUrl
+          ? _value.thumbnailUrl
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      sectionId: freezed == sectionId
-          ? _value.sectionId
-          : sectionId // ignore: cast_nullable_to_non_nullable
+      videoUrl: freezed == videoUrl
+          ? _value.videoUrl
+          : videoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
+      fileUrl: freezed == fileUrl
+          ? _value.fileUrl
+          : fileUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -257,41 +257,40 @@ class __$$FirestoreUserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FirestoreUserImpl extends _FirestoreUser {
-  const _$FirestoreUserImpl(
-      {required this.uid,
-      required this.username,
-      required this.firstName,
-      required this.middleName,
-      required this.lastName,
-      required this.sectionId,
-      this.isActive = true,
+class _$FirestoreLessonImpl implements _FirestoreLesson {
+  const _$FirestoreLessonImpl(
+      {required this.id,
+      required this.title,
+      required this.description,
+      this.quarter = Quarter.undefined,
+      this.thumbnailUrl,
+      this.videoUrl,
+      this.fileUrl,
       @TimestampConverter() required this.createdAt,
       this.createdBy,
       @TimestampNullableConverter() this.updatedAt,
       this.updatedBy,
       @TimestampNullableConverter() this.deletedAt,
-      this.deletedBy})
-      : super._();
+      this.deletedBy});
 
-  factory _$FirestoreUserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FirestoreUserImplFromJson(json);
+  factory _$FirestoreLessonImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FirestoreLessonImplFromJson(json);
 
   @override
-  final String uid;
+  final String id;
   @override
-  final String username;
+  final String title;
   @override
-  final String firstName;
-  @override
-  final String? middleName;
-  @override
-  final String lastName;
-  @override
-  final String? sectionId;
+  final String description;
   @override
   @JsonKey()
-  final bool isActive;
+  final Quarter quarter;
+  @override
+  final String? thumbnailUrl;
+  @override
+  final String? videoUrl;
+  @override
+  final String? fileUrl;
   @override
   @TimestampConverter()
   final DateTime createdAt;
@@ -310,27 +309,24 @@ class _$FirestoreUserImpl extends _FirestoreUser {
 
   @override
   String toString() {
-    return 'FirestoreUser(uid: $uid, username: $username, firstName: $firstName, middleName: $middleName, lastName: $lastName, sectionId: $sectionId, isActive: $isActive, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'FirestoreLesson(id: $id, title: $title, description: $description, quarter: $quarter, thumbnailUrl: $thumbnailUrl, videoUrl: $videoUrl, fileUrl: $fileUrl, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FirestoreUserImpl &&
-            (identical(other.uid, uid) || other.uid == uid) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.middleName, middleName) ||
-                other.middleName == middleName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.sectionId, sectionId) ||
-                other.sectionId == sectionId) &&
-            (identical(other.isActive, isActive) ||
-                other.isActive == isActive) &&
+            other is _$FirestoreLessonImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.quarter, quarter) || other.quarter == quarter) &&
+            (identical(other.thumbnailUrl, thumbnailUrl) ||
+                other.thumbnailUrl == thumbnailUrl) &&
+            (identical(other.videoUrl, videoUrl) ||
+                other.videoUrl == videoUrl) &&
+            (identical(other.fileUrl, fileUrl) || other.fileUrl == fileUrl) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.createdBy, createdBy) ||
@@ -349,13 +345,13 @@ class _$FirestoreUserImpl extends _FirestoreUser {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      uid,
-      username,
-      firstName,
-      middleName,
-      lastName,
-      sectionId,
-      isActive,
+      id,
+      title,
+      description,
+      quarter,
+      thumbnailUrl,
+      videoUrl,
+      fileUrl,
       createdAt,
       createdBy,
       updatedAt,
@@ -366,51 +362,51 @@ class _$FirestoreUserImpl extends _FirestoreUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FirestoreUserImplCopyWith<_$FirestoreUserImpl> get copyWith =>
-      __$$FirestoreUserImplCopyWithImpl<_$FirestoreUserImpl>(this, _$identity);
+  _$$FirestoreLessonImplCopyWith<_$FirestoreLessonImpl> get copyWith =>
+      __$$FirestoreLessonImplCopyWithImpl<_$FirestoreLessonImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FirestoreUserImplToJson(
+    return _$$FirestoreLessonImplToJson(
       this,
     );
   }
 }
 
-abstract class _FirestoreUser extends FirestoreUser {
-  const factory _FirestoreUser(
-      {required final String uid,
-      required final String username,
-      required final String firstName,
-      required final String? middleName,
-      required final String lastName,
-      required final String? sectionId,
-      final bool isActive,
+abstract class _FirestoreLesson implements FirestoreLesson {
+  const factory _FirestoreLesson(
+      {required final String id,
+      required final String title,
+      required final String description,
+      final Quarter quarter,
+      final String? thumbnailUrl,
+      final String? videoUrl,
+      final String? fileUrl,
       @TimestampConverter() required final DateTime createdAt,
       final String? createdBy,
       @TimestampNullableConverter() final DateTime? updatedAt,
       final String? updatedBy,
       @TimestampNullableConverter() final DateTime? deletedAt,
-      final String? deletedBy}) = _$FirestoreUserImpl;
-  const _FirestoreUser._() : super._();
+      final String? deletedBy}) = _$FirestoreLessonImpl;
 
-  factory _FirestoreUser.fromJson(Map<String, dynamic> json) =
-      _$FirestoreUserImpl.fromJson;
+  factory _FirestoreLesson.fromJson(Map<String, dynamic> json) =
+      _$FirestoreLessonImpl.fromJson;
 
   @override
-  String get uid;
+  String get id;
   @override
-  String get username;
+  String get title;
   @override
-  String get firstName;
+  String get description;
   @override
-  String? get middleName;
+  Quarter get quarter;
   @override
-  String get lastName;
+  String? get thumbnailUrl;
   @override
-  String? get sectionId;
+  String? get videoUrl;
   @override
-  bool get isActive;
+  String? get fileUrl;
   @override
   @TimestampConverter()
   DateTime get createdAt;
@@ -428,6 +424,6 @@ abstract class _FirestoreUser extends FirestoreUser {
   String? get deletedBy;
   @override
   @JsonKey(ignore: true)
-  _$$FirestoreUserImplCopyWith<_$FirestoreUserImpl> get copyWith =>
+  _$$FirestoreLessonImplCopyWith<_$FirestoreLessonImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

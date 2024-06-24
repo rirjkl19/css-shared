@@ -1,20 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'firestore_user.dart';
+part of 'firestore_lesson.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FirestoreUserImpl _$$FirestoreUserImplFromJson(Map<String, dynamic> json) =>
-    _$FirestoreUserImpl(
-      uid: json['uid'] as String,
-      username: json['username'] as String,
-      firstName: json['firstName'] as String,
-      middleName: json['middleName'] as String?,
-      lastName: json['lastName'] as String,
-      sectionId: json['sectionId'] as String?,
-      isActive: json['isActive'] as bool? ?? true,
+_$FirestoreLessonImpl _$$FirestoreLessonImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FirestoreLessonImpl(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String,
+      quarter: $enumDecodeNullable(_$QuarterEnumMap, json['quarter']) ??
+          Quarter.undefined,
+      thumbnailUrl: json['thumbnailUrl'] as String?,
+      videoUrl: json['videoUrl'] as String?,
+      fileUrl: json['fileUrl'] as String?,
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
       createdBy: json['createdBy'] as String?,
@@ -26,15 +28,16 @@ _$FirestoreUserImpl _$$FirestoreUserImplFromJson(Map<String, dynamic> json) =>
       deletedBy: json['deletedBy'] as String?,
     );
 
-Map<String, dynamic> _$$FirestoreUserImplToJson(_$FirestoreUserImpl instance) =>
+Map<String, dynamic> _$$FirestoreLessonImplToJson(
+        _$FirestoreLessonImpl instance) =>
     <String, dynamic>{
-      'uid': instance.uid,
-      'username': instance.username,
-      'firstName': instance.firstName,
-      'middleName': instance.middleName,
-      'lastName': instance.lastName,
-      'sectionId': instance.sectionId,
-      'isActive': instance.isActive,
+      'id': instance.id,
+      'title': instance.title,
+      'description': instance.description,
+      'quarter': _$QuarterEnumMap[instance.quarter]!,
+      'thumbnailUrl': instance.thumbnailUrl,
+      'videoUrl': instance.videoUrl,
+      'fileUrl': instance.fileUrl,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'createdBy': instance.createdBy,
       'updatedAt':
@@ -44,3 +47,11 @@ Map<String, dynamic> _$$FirestoreUserImplToJson(_$FirestoreUserImpl instance) =>
           const TimestampNullableConverter().toJson(instance.deletedAt),
       'deletedBy': instance.deletedBy,
     };
+
+const _$QuarterEnumMap = {
+  Quarter.first: 'first',
+  Quarter.second: 'second',
+  Quarter.third: 'third',
+  Quarter.fourth: 'fourth',
+  Quarter.undefined: 'undefined',
+};
