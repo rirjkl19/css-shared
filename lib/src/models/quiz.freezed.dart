@@ -23,7 +23,8 @@ mixin _$Quiz {
   String get id => throw _privateConstructorUsedError;
   String get lessonId => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get createdBy => throw _privateConstructorUsedError;
   @TimestampNullableConverter()
@@ -47,8 +48,8 @@ abstract class $QuizCopyWith<$Res> {
       {String id,
       String lessonId,
       String title,
-      String description,
-      DateTime createdAt,
+      String? description,
+      @TimestampConverter() DateTime createdAt,
       String createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
       String? updatedBy,
@@ -72,7 +73,7 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
     Object? id = null,
     Object? lessonId = null,
     Object? title = null,
-    Object? description = null,
+    Object? description = freezed,
     Object? createdAt = null,
     Object? createdBy = null,
     Object? updatedAt = freezed,
@@ -93,10 +94,10 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -136,8 +137,8 @@ abstract class _$$QuizImplCopyWith<$Res> implements $QuizCopyWith<$Res> {
       {String id,
       String lessonId,
       String title,
-      String description,
-      DateTime createdAt,
+      String? description,
+      @TimestampConverter() DateTime createdAt,
       String createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
       String? updatedBy,
@@ -158,7 +159,7 @@ class __$$QuizImplCopyWithImpl<$Res>
     Object? id = null,
     Object? lessonId = null,
     Object? title = null,
-    Object? description = null,
+    Object? description = freezed,
     Object? createdAt = null,
     Object? createdBy = null,
     Object? updatedAt = freezed,
@@ -179,10 +180,10 @@ class __$$QuizImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -218,8 +219,8 @@ class _$QuizImpl extends _Quiz {
       {required this.id,
       required this.lessonId,
       required this.title,
-      required this.description,
-      required this.createdAt,
+      this.description,
+      @TimestampConverter() required this.createdAt,
       required this.createdBy,
       @TimestampNullableConverter() this.updatedAt,
       this.updatedBy,
@@ -237,8 +238,9 @@ class _$QuizImpl extends _Quiz {
   @override
   final String title;
   @override
-  final String description;
+  final String? description;
   @override
+  @TimestampConverter()
   final DateTime createdAt;
   @override
   final String createdBy;
@@ -307,8 +309,8 @@ abstract class _Quiz extends Quiz {
       {required final String id,
       required final String lessonId,
       required final String title,
-      required final String description,
-      required final DateTime createdAt,
+      final String? description,
+      @TimestampConverter() required final DateTime createdAt,
       required final String createdBy,
       @TimestampNullableConverter() final DateTime? updatedAt,
       final String? updatedBy,
@@ -325,8 +327,9 @@ abstract class _Quiz extends Quiz {
   @override
   String get title;
   @override
-  String get description;
+  String? get description;
   @override
+  @TimestampConverter()
   DateTime get createdAt;
   @override
   String get createdBy;
