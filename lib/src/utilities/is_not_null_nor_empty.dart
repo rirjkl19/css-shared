@@ -32,8 +32,10 @@ extension IsNotNullNorEmptyExtension<T> on T? {
       return true;
     }
   }
+}
 
-  bool isNotNullNorShort(String? input, int notLessThan) {
-    return input.isNotNullNorEmpty && input!.trim().length >= notLessThan;
+extension IsNotNullNorEmptyExtensionString on String? {
+  bool isNotNullNorShort(int notLessThan) {
+    return this.isNotNullNorEmpty && this!.trim().length >= notLessThan;
   }
 }
