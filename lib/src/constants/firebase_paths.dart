@@ -20,11 +20,11 @@ final class FirebasePaths {
   static String lesson(String id) => '$lessons/$id';
 
   /// Path to the quizzes collection group
-  static const String quizzes = 'quizzes';
+  static String quizzes(String lessonId) => '${lesson(lessonId)}/quizzes';
 
   /// Path to a quiz document
   static String quiz(String lessonId, String quizId) {
-    return '${lesson(lessonId)}/$quizzes/$quizId';
+    return '${quizzes(lessonId)}/$quizId';
   }
 
   /// Path to the questions collection
