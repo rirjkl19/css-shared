@@ -1,19 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'quiz.dart';
+part of 'user_profile_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$QuizImpl _$$QuizImplFromJson(Map<String, dynamic> json) => _$QuizImpl(
-      id: json['id'] as String,
-      lessonId: json['lessonId'] as String,
-      title: json['title'] as String,
-      description: json['description'] as String?,
+_$UserProfileDtoImpl _$$UserProfileDtoImplFromJson(Map<String, dynamic> json) =>
+    _$UserProfileDtoImpl(
+      uid: json['uid'] as String,
+      username: json['username'] as String,
+      firstName: json['firstName'] as String,
+      middleName: json['middleName'] as String?,
+      lastName: json['lastName'] as String,
+      sectionId: json['sectionId'] as String?,
+      isActive: json['isActive'] as bool? ?? true,
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
-      createdBy: json['createdBy'] as String,
+      createdBy: json['createdBy'] as String?,
       updatedAt: const TimestampNullableConverter()
           .fromJson(json['updatedAt'] as Timestamp?),
       updatedBy: json['updatedBy'] as String?,
@@ -22,12 +26,16 @@ _$QuizImpl _$$QuizImplFromJson(Map<String, dynamic> json) => _$QuizImpl(
       deletedBy: json['deletedBy'] as String?,
     );
 
-Map<String, dynamic> _$$QuizImplToJson(_$QuizImpl instance) =>
+Map<String, dynamic> _$$UserProfileDtoImplToJson(
+        _$UserProfileDtoImpl instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'lessonId': instance.lessonId,
-      'title': instance.title,
-      'description': instance.description,
+      'uid': instance.uid,
+      'username': instance.username,
+      'firstName': instance.firstName,
+      'middleName': instance.middleName,
+      'lastName': instance.lastName,
+      'sectionId': instance.sectionId,
+      'isActive': instance.isActive,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'createdBy': instance.createdBy,
       'updatedAt':

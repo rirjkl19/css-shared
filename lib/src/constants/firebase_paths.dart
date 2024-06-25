@@ -23,7 +23,19 @@ final class FirebasePaths {
   static const String quizzes = 'quizzes';
 
   /// Path to a quiz document
-  static String quiz(String lessonId, String quizId) => '${lesson(lessonId)}/$quizzes/$quizId';
+  static String quiz(String lessonId, String quizId) {
+    return '${lesson(lessonId)}/$quizzes/$quizId';
+  }
+
+  /// Path to the questions collection
+  static String questions(String lessonId, String quizId) {
+    return '${quiz(lessonId, quizId)}/questions';
+  }
+
+  /// Path to the question document
+  static String question(String lessonId, String quizId, String questionId) {
+    return '${questions(lessonId, quizId)}/$questionId';
+  }
 
   static String get fileUploadsPath => 'file_uploads';
   static String fileUploadPath(String lessonId) => 'file_uploads/$lessonId';

@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:css_shared/src/models/quarter.dart';
+import 'package:css_shared/src/models/dto/quarter.dart';
 import 'package:css_shared/src/utilities/timestamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'lesson.freezed.dart';
-part 'lesson.g.dart';
+part 'lesson_dto.freezed.dart';
+part 'lesson_dto.g.dart';
 
 @freezed
-class Lesson with _$Lesson {
-  const factory Lesson({
+class LessonDto with _$LessonDto {
+  const factory LessonDto({
     required String id,
     required String title,
     required String description,
@@ -24,5 +24,5 @@ class Lesson with _$Lesson {
     String? deletedBy,
   }) = _Lesson;
 
-  factory Lesson.fromJson(Map<String, dynamic> json) => _$LessonFromJson(json);
+  factory LessonDto.fromJson(Map<String, dynamic> json) => _$LessonDtoFromJson(json);
 }

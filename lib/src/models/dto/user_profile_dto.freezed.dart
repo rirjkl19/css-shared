@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_profile.dart';
+part of 'user_profile_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-UserProfile _$UserProfileFromJson(Map<String, dynamic> json) {
-  return _UserProfile.fromJson(json);
+UserProfileDto _$UserProfileDtoFromJson(Map<String, dynamic> json) {
+  return _UserProfileDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$UserProfile {
+mixin _$UserProfileDto {
   String get uid => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
@@ -39,15 +39,15 @@ mixin _$UserProfile {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserProfileCopyWith<UserProfile> get copyWith =>
+  $UserProfileDtoCopyWith<UserProfileDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserProfileCopyWith<$Res> {
-  factory $UserProfileCopyWith(
-          UserProfile value, $Res Function(UserProfile) then) =
-      _$UserProfileCopyWithImpl<$Res, UserProfile>;
+abstract class $UserProfileDtoCopyWith<$Res> {
+  factory $UserProfileDtoCopyWith(
+          UserProfileDto value, $Res Function(UserProfileDto) then) =
+      _$UserProfileDtoCopyWithImpl<$Res, UserProfileDto>;
   @useResult
   $Res call(
       {String uid,
@@ -66,9 +66,9 @@ abstract class $UserProfileCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
-    implements $UserProfileCopyWith<$Res> {
-  _$UserProfileCopyWithImpl(this._value, this._then);
+class _$UserProfileDtoCopyWithImpl<$Res, $Val extends UserProfileDto>
+    implements $UserProfileDtoCopyWith<$Res> {
+  _$UserProfileDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -150,11 +150,11 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
 }
 
 /// @nodoc
-abstract class _$$UserProfileImplCopyWith<$Res>
-    implements $UserProfileCopyWith<$Res> {
-  factory _$$UserProfileImplCopyWith(
-          _$UserProfileImpl value, $Res Function(_$UserProfileImpl) then) =
-      __$$UserProfileImplCopyWithImpl<$Res>;
+abstract class _$$UserProfileDtoImplCopyWith<$Res>
+    implements $UserProfileDtoCopyWith<$Res> {
+  factory _$$UserProfileDtoImplCopyWith(_$UserProfileDtoImpl value,
+          $Res Function(_$UserProfileDtoImpl) then) =
+      __$$UserProfileDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -174,11 +174,11 @@ abstract class _$$UserProfileImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UserProfileImplCopyWithImpl<$Res>
-    extends _$UserProfileCopyWithImpl<$Res, _$UserProfileImpl>
-    implements _$$UserProfileImplCopyWith<$Res> {
-  __$$UserProfileImplCopyWithImpl(
-      _$UserProfileImpl _value, $Res Function(_$UserProfileImpl) _then)
+class __$$UserProfileDtoImplCopyWithImpl<$Res>
+    extends _$UserProfileDtoCopyWithImpl<$Res, _$UserProfileDtoImpl>
+    implements _$$UserProfileDtoImplCopyWith<$Res> {
+  __$$UserProfileDtoImplCopyWithImpl(
+      _$UserProfileDtoImpl _value, $Res Function(_$UserProfileDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -198,7 +198,7 @@ class __$$UserProfileImplCopyWithImpl<$Res>
     Object? deletedAt = freezed,
     Object? deletedBy = freezed,
   }) {
-    return _then(_$UserProfileImpl(
+    return _then(_$UserProfileDtoImpl(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -257,8 +257,8 @@ class __$$UserProfileImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserProfileImpl extends _UserProfile {
-  const _$UserProfileImpl(
+class _$UserProfileDtoImpl extends _UserProfileDto {
+  const _$UserProfileDtoImpl(
       {required this.uid,
       required this.username,
       required this.firstName,
@@ -274,8 +274,8 @@ class _$UserProfileImpl extends _UserProfile {
       this.deletedBy})
       : super._();
 
-  factory _$UserProfileImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserProfileImplFromJson(json);
+  factory _$UserProfileDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserProfileDtoImplFromJson(json);
 
   @override
   final String uid;
@@ -310,14 +310,14 @@ class _$UserProfileImpl extends _UserProfile {
 
   @override
   String toString() {
-    return 'UserProfile(uid: $uid, username: $username, firstName: $firstName, middleName: $middleName, lastName: $lastName, sectionId: $sectionId, isActive: $isActive, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'UserProfileDto(uid: $uid, username: $username, firstName: $firstName, middleName: $middleName, lastName: $lastName, sectionId: $sectionId, isActive: $isActive, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserProfileImpl &&
+            other is _$UserProfileDtoImpl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.username, username) ||
                 other.username == username) &&
@@ -366,19 +366,20 @@ class _$UserProfileImpl extends _UserProfile {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserProfileImplCopyWith<_$UserProfileImpl> get copyWith =>
-      __$$UserProfileImplCopyWithImpl<_$UserProfileImpl>(this, _$identity);
+  _$$UserProfileDtoImplCopyWith<_$UserProfileDtoImpl> get copyWith =>
+      __$$UserProfileDtoImplCopyWithImpl<_$UserProfileDtoImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UserProfileImplToJson(
+    return _$$UserProfileDtoImplToJson(
       this,
     );
   }
 }
 
-abstract class _UserProfile extends UserProfile {
-  const factory _UserProfile(
+abstract class _UserProfileDto extends UserProfileDto {
+  const factory _UserProfileDto(
       {required final String uid,
       required final String username,
       required final String firstName,
@@ -391,11 +392,11 @@ abstract class _UserProfile extends UserProfile {
       @TimestampNullableConverter() final DateTime? updatedAt,
       final String? updatedBy,
       @TimestampNullableConverter() final DateTime? deletedAt,
-      final String? deletedBy}) = _$UserProfileImpl;
-  const _UserProfile._() : super._();
+      final String? deletedBy}) = _$UserProfileDtoImpl;
+  const _UserProfileDto._() : super._();
 
-  factory _UserProfile.fromJson(Map<String, dynamic> json) =
-      _$UserProfileImpl.fromJson;
+  factory _UserProfileDto.fromJson(Map<String, dynamic> json) =
+      _$UserProfileDtoImpl.fromJson;
 
   @override
   String get uid;
@@ -428,6 +429,6 @@ abstract class _UserProfile extends UserProfile {
   String? get deletedBy;
   @override
   @JsonKey(ignore: true)
-  _$$UserProfileImplCopyWith<_$UserProfileImpl> get copyWith =>
+  _$$UserProfileDtoImplCopyWith<_$UserProfileDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

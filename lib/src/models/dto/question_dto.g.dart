@@ -1,23 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'lesson.dart';
+part of 'question_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LessonImpl _$$LessonImplFromJson(Map<String, dynamic> json) => _$LessonImpl(
+_$QuestionImpl _$$QuestionImplFromJson(Map<String, dynamic> json) =>
+    _$QuestionImpl(
       id: json['id'] as String,
-      title: json['title'] as String,
-      description: json['description'] as String,
-      quarter: $enumDecodeNullable(_$QuarterEnumMap, json['quarter']) ??
-          Quarter.undefined,
-      thumbnailUrl: json['thumbnailUrl'] as String?,
-      videoUrl: json['videoUrl'] as String?,
-      fileUrl: json['fileUrl'] as String?,
+      quizId: json['quizId'] as String,
+      label: json['label'] as String,
+      type: $enumDecodeNullable(_$QuestionTypeEnumMap, json['type']) ??
+          QuestionType.undefined,
+      categories: (json['categories'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
-      createdBy: json['createdBy'] as String?,
+      createdBy: json['createdBy'] as String,
       updatedAt: const TimestampNullableConverter()
           .fromJson(json['updatedAt'] as Timestamp?),
       updatedBy: json['updatedBy'] as String?,
@@ -26,15 +28,13 @@ _$LessonImpl _$$LessonImplFromJson(Map<String, dynamic> json) => _$LessonImpl(
       deletedBy: json['deletedBy'] as String?,
     );
 
-Map<String, dynamic> _$$LessonImplToJson(_$LessonImpl instance) =>
+Map<String, dynamic> _$$QuestionImplToJson(_$QuestionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'title': instance.title,
-      'description': instance.description,
-      'quarter': _$QuarterEnumMap[instance.quarter]!,
-      'thumbnailUrl': instance.thumbnailUrl,
-      'videoUrl': instance.videoUrl,
-      'fileUrl': instance.fileUrl,
+      'quizId': instance.quizId,
+      'label': instance.label,
+      'type': _$QuestionTypeEnumMap[instance.type]!,
+      'categories': instance.categories,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'createdBy': instance.createdBy,
       'updatedAt':
@@ -45,10 +45,10 @@ Map<String, dynamic> _$$LessonImplToJson(_$LessonImpl instance) =>
       'deletedBy': instance.deletedBy,
     };
 
-const _$QuarterEnumMap = {
-  Quarter.first: 'first',
-  Quarter.second: 'second',
-  Quarter.third: 'third',
-  Quarter.fourth: 'fourth',
-  Quarter.undefined: 'undefined',
+const _$QuestionTypeEnumMap = {
+  QuestionType.oneAnswer: 'oneAnswer',
+  QuestionType.multipleAnswer: 'multipleAnswer',
+  QuestionType.grouping: 'grouping',
+  QuestionType.sequencing: 'sequencing',
+  QuestionType.undefined: 'undefined',
 };

@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:css_shared/src/utilities/timestamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'user_profile.freezed.dart';
-part 'user_profile.g.dart';
+part 'user_profile_dto.freezed.dart';
+part 'user_profile_dto.g.dart';
 
 @freezed
-class UserProfile with _$UserProfile {
-  const UserProfile._();
+class UserProfileDto with _$UserProfileDto {
+  const UserProfileDto._();
 
-  const factory UserProfile({
+  const factory UserProfileDto({
     required String uid,
     required String username,
     required String firstName,
@@ -23,7 +23,7 @@ class UserProfile with _$UserProfile {
     String? updatedBy,
     @TimestampNullableConverter() DateTime? deletedAt,
     String? deletedBy,
-  }) = _UserProfile;
+  }) = _UserProfileDto;
 
-  factory UserProfile.fromJson(Map<String, dynamic> json) => _$UserProfileFromJson(json);
+  factory UserProfileDto.fromJson(Map<String, dynamic> json) => _$UserProfileDtoFromJson(json);
 }

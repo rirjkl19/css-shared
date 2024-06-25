@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:css_shared/src/utilities/timestamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'quiz.freezed.dart';
-part 'quiz.g.dart';
+part 'quiz_dto.freezed.dart';
+part 'quiz_dto.g.dart';
 
 @freezed
-class Quiz with _$Quiz {
-  const Quiz._();
+class QuizDto with _$QuizDto {
+  const QuizDto._();
 
-  const factory Quiz({
+  const factory QuizDto({
     required String id,
     required String lessonId,
     required String title,
@@ -22,5 +22,5 @@ class Quiz with _$Quiz {
     String? deletedBy,
   }) = _Quiz;
 
-  factory Quiz.fromJson(Map<String, dynamic> json) => _$QuizFromJson(json);
+  factory QuizDto.fromJson(Map<String, dynamic> json) => _$QuizDtoFromJson(json);
 }
