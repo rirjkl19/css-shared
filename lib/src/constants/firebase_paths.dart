@@ -56,6 +56,23 @@ final class FirebasePaths {
     return '${choices(lessonId, quizId, questionId)}/$choiceId';
   }
 
+  /// Path to the userQuizzes collection
+  static const String userQuizzes = 'userQuizzes';
+
+  /// Path to a userQuiz document
+  static String userQuiz(String id) => '$userQuizzes/$id';
+
+  /// Path to the userChoices collection group
+  static const String userChoicesCollectionGroup = 'userChoices';
+
+  /// Path to the userChoices collection
+  static String userChoices(String userQuizId) => '$userQuizzes/$userQuizId/userChoices';
+
+  /// Path to a userChoice document
+  static String userChoice(String userQuizId, String choiceId) {
+    return '${userChoices(userQuizId)}/$choiceId';
+  }
+
   static String get fileUploadsPath => 'file_uploads';
   static String fileUploadPath(String lessonId) => 'file_uploads/$lessonId';
 }
