@@ -10,6 +10,7 @@ _$ChoiceDtoImpl _$$ChoiceDtoImplFromJson(Map<String, dynamic> json) =>
     _$ChoiceDtoImpl(
       id: json['id'] as String,
       questionId: json['questionId'] as String,
+      quizId: json['quizId'] as String,
       label: json['label'] as String? ?? '',
       isCorrect: json['isCorrect'] as bool? ?? false,
       ordinal: (json['ordinal'] as num?)?.toInt() ?? 0,
@@ -29,6 +30,7 @@ Map<String, dynamic> _$$ChoiceDtoImplToJson(_$ChoiceDtoImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'questionId': instance.questionId,
+      'quizId': instance.quizId,
       'label': instance.label,
       'isCorrect': instance.isCorrect,
       'ordinal': instance.ordinal,

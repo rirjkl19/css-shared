@@ -10,6 +10,7 @@ class ChoiceDto with _$ChoiceDto {
   const factory ChoiceDto({
     required String id,
     required String questionId,
+    required String quizId,
     @Default('') String label,
     @Default(false) bool isCorrect,
     @Default(0) int ordinal,

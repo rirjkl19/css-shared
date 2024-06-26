@@ -22,6 +22,7 @@ ChoiceDto _$ChoiceDtoFromJson(Map<String, dynamic> json) {
 mixin _$ChoiceDto {
   String get id => throw _privateConstructorUsedError;
   String get questionId => throw _privateConstructorUsedError;
+  String get quizId => throw _privateConstructorUsedError;
   String get label => throw _privateConstructorUsedError;
   bool get isCorrect => throw _privateConstructorUsedError;
   int get ordinal => throw _privateConstructorUsedError;
@@ -50,6 +51,7 @@ abstract class $ChoiceDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String questionId,
+      String quizId,
       String label,
       bool isCorrect,
       int ordinal,
@@ -77,6 +79,7 @@ class _$ChoiceDtoCopyWithImpl<$Res, $Val extends ChoiceDto>
   $Res call({
     Object? id = null,
     Object? questionId = null,
+    Object? quizId = null,
     Object? label = null,
     Object? isCorrect = null,
     Object? ordinal = null,
@@ -96,6 +99,10 @@ class _$ChoiceDtoCopyWithImpl<$Res, $Val extends ChoiceDto>
       questionId: null == questionId
           ? _value.questionId
           : questionId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quizId: null == quizId
+          ? _value.quizId
+          : quizId // ignore: cast_nullable_to_non_nullable
               as String,
       label: null == label
           ? _value.label
@@ -152,6 +159,7 @@ abstract class _$$ChoiceDtoImplCopyWith<$Res>
   $Res call(
       {String id,
       String questionId,
+      String quizId,
       String label,
       bool isCorrect,
       int ordinal,
@@ -177,6 +185,7 @@ class __$$ChoiceDtoImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? questionId = null,
+    Object? quizId = null,
     Object? label = null,
     Object? isCorrect = null,
     Object? ordinal = null,
@@ -196,6 +205,10 @@ class __$$ChoiceDtoImplCopyWithImpl<$Res>
       questionId: null == questionId
           ? _value.questionId
           : questionId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quizId: null == quizId
+          ? _value.quizId
+          : quizId // ignore: cast_nullable_to_non_nullable
               as String,
       label: null == label
           ? _value.label
@@ -247,6 +260,7 @@ class _$ChoiceDtoImpl implements _ChoiceDto {
   const _$ChoiceDtoImpl(
       {required this.id,
       required this.questionId,
+      required this.quizId,
       this.label = '',
       this.isCorrect = false,
       this.ordinal = 0,
@@ -265,6 +279,8 @@ class _$ChoiceDtoImpl implements _ChoiceDto {
   final String id;
   @override
   final String questionId;
+  @override
+  final String quizId;
   @override
   @JsonKey()
   final String label;
@@ -294,7 +310,7 @@ class _$ChoiceDtoImpl implements _ChoiceDto {
 
   @override
   String toString() {
-    return 'ChoiceDto(id: $id, questionId: $questionId, label: $label, isCorrect: $isCorrect, ordinal: $ordinal, category: $category, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'ChoiceDto(id: $id, questionId: $questionId, quizId: $quizId, label: $label, isCorrect: $isCorrect, ordinal: $ordinal, category: $category, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
   }
 
   @override
@@ -305,6 +321,7 @@ class _$ChoiceDtoImpl implements _ChoiceDto {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.questionId, questionId) ||
                 other.questionId == questionId) &&
+            (identical(other.quizId, quizId) || other.quizId == quizId) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.isCorrect, isCorrect) ||
                 other.isCorrect == isCorrect) &&
@@ -331,6 +348,7 @@ class _$ChoiceDtoImpl implements _ChoiceDto {
       runtimeType,
       id,
       questionId,
+      quizId,
       label,
       isCorrect,
       ordinal,
@@ -360,6 +378,7 @@ abstract class _ChoiceDto implements ChoiceDto {
   const factory _ChoiceDto(
       {required final String id,
       required final String questionId,
+      required final String quizId,
       final String label,
       final bool isCorrect,
       final int ordinal,
@@ -378,6 +397,8 @@ abstract class _ChoiceDto implements ChoiceDto {
   String get id;
   @override
   String get questionId;
+  @override
+  String get quizId;
   @override
   String get label;
   @override
