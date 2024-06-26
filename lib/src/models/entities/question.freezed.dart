@@ -21,6 +21,7 @@ mixin _$Question {
   String get label => throw _privateConstructorUsedError;
   QuestionType get type => throw _privateConstructorUsedError;
   List<String> get categories => throw _privateConstructorUsedError;
+  List<Choice> get choices => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $QuestionCopyWith<Question> get copyWith =>
@@ -37,7 +38,8 @@ abstract class $QuestionCopyWith<$Res> {
       String quizId,
       String label,
       QuestionType type,
-      List<String> categories});
+      List<String> categories,
+      List<Choice> choices});
 }
 
 /// @nodoc
@@ -58,6 +60,7 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
     Object? label = null,
     Object? type = null,
     Object? categories = null,
+    Object? choices = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -80,6 +83,10 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      choices: null == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<Choice>,
     ) as $Val);
   }
 }
@@ -97,7 +104,8 @@ abstract class _$$QuestionImplCopyWith<$Res>
       String quizId,
       String label,
       QuestionType type,
-      List<String> categories});
+      List<String> categories,
+      List<Choice> choices});
 }
 
 /// @nodoc
@@ -116,6 +124,7 @@ class __$$QuestionImplCopyWithImpl<$Res>
     Object? label = null,
     Object? type = null,
     Object? categories = null,
+    Object? choices = null,
   }) {
     return _then(_$QuestionImpl(
       id: null == id
@@ -138,6 +147,10 @@ class __$$QuestionImplCopyWithImpl<$Res>
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      choices: null == choices
+          ? _value._choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<Choice>,
     ));
   }
 }
@@ -150,8 +163,10 @@ class _$QuestionImpl implements _Question {
       required this.quizId,
       required this.label,
       required this.type,
-      required final List<String> categories})
-      : _categories = categories;
+      final List<String> categories = const [],
+      final List<Choice> choices = const []})
+      : _categories = categories,
+        _choices = choices;
 
   @override
   final String id;
@@ -163,15 +178,25 @@ class _$QuestionImpl implements _Question {
   final QuestionType type;
   final List<String> _categories;
   @override
+  @JsonKey()
   List<String> get categories {
     if (_categories is EqualUnmodifiableListView) return _categories;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_categories);
   }
 
+  final List<Choice> _choices;
+  @override
+  @JsonKey()
+  List<Choice> get choices {
+    if (_choices is EqualUnmodifiableListView) return _choices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_choices);
+  }
+
   @override
   String toString() {
-    return 'Question(id: $id, quizId: $quizId, label: $label, type: $type, categories: $categories)';
+    return 'Question(id: $id, quizId: $quizId, label: $label, type: $type, categories: $categories, choices: $choices)';
   }
 
   @override
@@ -184,12 +209,19 @@ class _$QuestionImpl implements _Question {
             (identical(other.label, label) || other.label == label) &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality()
-                .equals(other._categories, _categories));
+                .equals(other._categories, _categories) &&
+            const DeepCollectionEquality().equals(other._choices, _choices));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, quizId, label, type,
-      const DeepCollectionEquality().hash(_categories));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      quizId,
+      label,
+      type,
+      const DeepCollectionEquality().hash(_categories),
+      const DeepCollectionEquality().hash(_choices));
 
   @JsonKey(ignore: true)
   @override
@@ -204,7 +236,8 @@ abstract class _Question implements Question {
       required final String quizId,
       required final String label,
       required final QuestionType type,
-      required final List<String> categories}) = _$QuestionImpl;
+      final List<String> categories,
+      final List<Choice> choices}) = _$QuestionImpl;
 
   @override
   String get id;
@@ -216,6 +249,8 @@ abstract class _Question implements Question {
   QuestionType get type;
   @override
   List<String> get categories;
+  @override
+  List<Choice> get choices;
   @override
   @JsonKey(ignore: true)
   _$$QuestionImplCopyWith<_$QuestionImpl> get copyWith =>

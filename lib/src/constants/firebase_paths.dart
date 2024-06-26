@@ -20,12 +20,18 @@ final class FirebasePaths {
   static String lesson(String id) => '$lessons/$id';
 
   /// Path to the quizzes collection group
+  static String quizzesCollectionGroup = 'quizzes';
+
+  /// Path to the quizzes collection group
   static String quizzes(String lessonId) => '${lesson(lessonId)}/quizzes';
 
   /// Path to a quiz document
   static String quiz(String lessonId, String quizId) {
     return '${quizzes(lessonId)}/$quizId';
   }
+
+  /// Path to the questions collection group
+  static String questionsCollectionGroup = 'questions';
 
   /// Path to the questions collection
   static String questions(String lessonId, String quizId) {
@@ -36,6 +42,9 @@ final class FirebasePaths {
   static String question(String lessonId, String quizId, String questionId) {
     return '${questions(lessonId, quizId)}/$questionId';
   }
+
+  /// Path to the choices collection group
+  static String choicesCollectionGroup = 'choices';
 
   /// Path to the choices collection
   static String choices(String lessonId, String quizId, String questionId) {
