@@ -1,9 +1,15 @@
 import 'package:css_shared/css_shared_models.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class QuestionRequest {
-  final String label;
-  final QuestionType type;
-  final List<String> categories;
+part 'question_request.freezed.dart';
 
-  QuestionRequest({required this.label, required this.type, this.categories = const []});
+@freezed
+class QuestionRequest with _$QuestionRequest {
+  const factory QuestionRequest({
+    required String id,
+    required String label,
+    @Default(QuestionType.oneAnswer) QuestionType type,
+    @Default([]) List<String> categories,
+    @Default([]) List<ChoiceRequest> choices,
+  }) = _QuestionRequest;
 }

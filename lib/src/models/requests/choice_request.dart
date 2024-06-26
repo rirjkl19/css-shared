@@ -1,13 +1,13 @@
-class ChoiceRequest {
-  final String label;
-  final bool isCorrect;
-  final int ordinal;
-  final String category;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  ChoiceRequest({
-    required this.label,
-    required this.isCorrect,
-    required this.ordinal,
-    required this.category,
-  });
+part 'choice_request.freezed.dart';
+
+@freezed
+class ChoiceRequest with _$ChoiceRequest {
+  const factory ChoiceRequest({
+    required String label,
+    @Default(false) bool isCorrect,
+    @Default(0) int ordinal,
+    String? category,
+  }) = _ChoiceRequest;
 }
