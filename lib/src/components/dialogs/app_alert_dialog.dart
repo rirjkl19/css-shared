@@ -8,12 +8,14 @@ class AppAlertDialog extends StatelessWidget with DialogHelperMixin {
     this.body,
     this.cancelButtonText = 'Cancel',
     this.confirmButtonText = 'Confirm',
+    this.onlyConfirmButton = false,
   });
 
   final String title;
   final String? body;
   final String cancelButtonText;
   final String confirmButtonText;
+  final bool onlyConfirmButton;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +23,14 @@ class AppAlertDialog extends StatelessWidget with DialogHelperMixin {
       title: Text(title),
       content: body != null ? Text(body!) : null,
       actions: [
-        TextButton(
-          onPressed: () {
-            if (context.mounted) Navigator.of(context).pop(false);
-          },
-          child: Text(cancelButtonText),
+        Visibility(
+          visible: !onlyConfirmButton,
+          child: TextButton(
+            onPressed: () {
+              if (context.mounted) Navigator.of(context).pop(false);
+            },
+            child: Text(cancelButtonText),
+          ),
         ),
         TextButton(
           onPressed: () {

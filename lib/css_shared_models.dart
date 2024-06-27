@@ -17,6 +17,7 @@ export 'src/models/entities/lesson.dart';
 export 'src/models/entities/choice.dart';
 export 'src/models/entities/user_quiz.dart';
 export 'src/models/entities/user_choice.dart';
+export 'src/models/entities/quiz_result.dart';
 
 export 'src/models/requests/question_request.dart';
 export 'src/models/requests/quiz_request.dart';
