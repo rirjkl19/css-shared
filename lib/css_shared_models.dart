@@ -10,6 +10,7 @@ export 'src/models/dto/question_type.dart';
 export 'src/models/dto/choice_dto.dart';
 export 'src/models/dto/user_quiz_dto.dart';
 export 'src/models/dto/user_choice_dto.dart';
+export 'src/models/dto/section_dto.dart';
 
 export 'src/models/entities/app_user.dart';
 export 'src/models/entities/question.dart';
