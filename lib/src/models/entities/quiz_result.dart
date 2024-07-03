@@ -17,9 +17,6 @@ class QuizResult with _$QuizResult {
     /// The user id of the quiz taker.
     required String userId,
 
-    /// The score for the quiz.
-    required int score,
-
     /// The attempt number for the quiz.
     required int attempt,
     required DateTime createdAt,
@@ -34,7 +31,7 @@ class QuizResult with _$QuizResult {
     required Map<String, List<UserChoice>> userChoices,
   }) = _QuizResult;
 
-  String get scoreLabel => '$score/${questions.length}';
+  String get scoreLabel => '$computeScore/${questions.length}';
 
   int get computeScore {
     return userChoices.entries.fold(0, (previousValue, element) {

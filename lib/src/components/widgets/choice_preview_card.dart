@@ -16,7 +16,7 @@ class ChoicePreviewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderColor = isUserCorrect
+    final borderColor = isUserAnswer && isCorrectAnswer
         ? Colors.green
         : isUserAnswer
             ? Colors.red
@@ -24,11 +24,7 @@ class ChoicePreviewCard extends StatelessWidget {
                 ? Colors.green
                 : Colors.transparent;
 
-    final tileColor = isUserCorrect
-        ? Colors.green.shade100
-        : isUserAnswer
-            ? Colors.red.shade100
-            : Colors.transparent;
+    final tileColor = isUserAnswer && isCorrectAnswer ? Colors.green.shade100 : Colors.transparent;
 
     final leading = isUserCorrect
         ? const Icon(Icons.check, color: Colors.green)

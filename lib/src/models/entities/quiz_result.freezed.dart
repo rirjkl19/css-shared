@@ -25,9 +25,6 @@ mixin _$QuizResult {
   /// The user id of the quiz taker.
   String get userId => throw _privateConstructorUsedError;
 
-  /// The score for the quiz.
-  int get score => throw _privateConstructorUsedError;
-
   /// The attempt number for the quiz.
   int get attempt => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
@@ -57,7 +54,6 @@ abstract class $QuizResultCopyWith<$Res> {
       {String id,
       String quizId,
       String userId,
-      int score,
       int attempt,
       DateTime createdAt,
       String createdBy,
@@ -81,7 +77,6 @@ class _$QuizResultCopyWithImpl<$Res, $Val extends QuizResult>
     Object? id = null,
     Object? quizId = null,
     Object? userId = null,
-    Object? score = null,
     Object? attempt = null,
     Object? createdAt = null,
     Object? createdBy = null,
@@ -101,10 +96,6 @@ class _$QuizResultCopyWithImpl<$Res, $Val extends QuizResult>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      score: null == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
-              as int,
       attempt: null == attempt
           ? _value.attempt
           : attempt // ignore: cast_nullable_to_non_nullable
@@ -141,7 +132,6 @@ abstract class _$$QuizResultImplCopyWith<$Res>
       {String id,
       String quizId,
       String userId,
-      int score,
       int attempt,
       DateTime createdAt,
       String createdBy,
@@ -163,7 +153,6 @@ class __$$QuizResultImplCopyWithImpl<$Res>
     Object? id = null,
     Object? quizId = null,
     Object? userId = null,
-    Object? score = null,
     Object? attempt = null,
     Object? createdAt = null,
     Object? createdBy = null,
@@ -183,10 +172,6 @@ class __$$QuizResultImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      score: null == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
-              as int,
       attempt: null == attempt
           ? _value.attempt
           : attempt // ignore: cast_nullable_to_non_nullable
@@ -218,7 +203,6 @@ class _$QuizResultImpl extends _QuizResult {
       {required this.id,
       required this.quizId,
       required this.userId,
-      required this.score,
       required this.attempt,
       required this.createdAt,
       required this.createdBy,
@@ -239,10 +223,6 @@ class _$QuizResultImpl extends _QuizResult {
   /// The user id of the quiz taker.
   @override
   final String userId;
-
-  /// The score for the quiz.
-  @override
-  final int score;
 
   /// The attempt number for the quiz.
   @override
@@ -280,7 +260,7 @@ class _$QuizResultImpl extends _QuizResult {
 
   @override
   String toString() {
-    return 'QuizResult(id: $id, quizId: $quizId, userId: $userId, score: $score, attempt: $attempt, createdAt: $createdAt, createdBy: $createdBy, questions: $questions, userChoices: $userChoices)';
+    return 'QuizResult(id: $id, quizId: $quizId, userId: $userId, attempt: $attempt, createdAt: $createdAt, createdBy: $createdBy, questions: $questions, userChoices: $userChoices)';
   }
 
   @override
@@ -291,7 +271,6 @@ class _$QuizResultImpl extends _QuizResult {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.score, score) || other.score == score) &&
             (identical(other.attempt, attempt) || other.attempt == attempt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -309,7 +288,6 @@ class _$QuizResultImpl extends _QuizResult {
       id,
       quizId,
       userId,
-      score,
       attempt,
       createdAt,
       createdBy,
@@ -328,7 +306,6 @@ abstract class _QuizResult extends QuizResult {
           {required final String id,
           required final String quizId,
           required final String userId,
-          required final int score,
           required final int attempt,
           required final DateTime createdAt,
           required final String createdBy,
@@ -349,10 +326,6 @@ abstract class _QuizResult extends QuizResult {
 
   /// The user id of the quiz taker.
   String get userId;
-  @override
-
-  /// The score for the quiz.
-  int get score;
   @override
 
   /// The attempt number for the quiz.
