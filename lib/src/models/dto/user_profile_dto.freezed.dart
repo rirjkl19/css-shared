@@ -26,6 +26,8 @@ mixin _$UserProfileDto {
   String? get middleName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String? get sectionId => throw _privateConstructorUsedError;
+  @UserTypeConverter()
+  UserType get userType => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
@@ -56,6 +58,7 @@ abstract class $UserProfileDtoCopyWith<$Res> {
       String? middleName,
       String lastName,
       String? sectionId,
+      @UserTypeConverter() UserType userType,
       bool isActive,
       @TimestampConverter() DateTime createdAt,
       String? createdBy,
@@ -84,6 +87,7 @@ class _$UserProfileDtoCopyWithImpl<$Res, $Val extends UserProfileDto>
     Object? middleName = freezed,
     Object? lastName = null,
     Object? sectionId = freezed,
+    Object? userType = null,
     Object? isActive = null,
     Object? createdAt = null,
     Object? createdBy = freezed,
@@ -117,6 +121,10 @@ class _$UserProfileDtoCopyWithImpl<$Res, $Val extends UserProfileDto>
           ? _value.sectionId
           : sectionId // ignore: cast_nullable_to_non_nullable
               as String?,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType,
       isActive: null == isActive
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
@@ -164,6 +172,7 @@ abstract class _$$UserProfileDtoImplCopyWith<$Res>
       String? middleName,
       String lastName,
       String? sectionId,
+      @UserTypeConverter() UserType userType,
       bool isActive,
       @TimestampConverter() DateTime createdAt,
       String? createdBy,
@@ -190,6 +199,7 @@ class __$$UserProfileDtoImplCopyWithImpl<$Res>
     Object? middleName = freezed,
     Object? lastName = null,
     Object? sectionId = freezed,
+    Object? userType = null,
     Object? isActive = null,
     Object? createdAt = null,
     Object? createdBy = freezed,
@@ -223,6 +233,10 @@ class __$$UserProfileDtoImplCopyWithImpl<$Res>
           ? _value.sectionId
           : sectionId // ignore: cast_nullable_to_non_nullable
               as String?,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType,
       isActive: null == isActive
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
@@ -265,6 +279,7 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
       required this.middleName,
       required this.lastName,
       required this.sectionId,
+      @UserTypeConverter() required this.userType,
       this.isActive = true,
       @TimestampConverter() required this.createdAt,
       this.createdBy,
@@ -290,6 +305,9 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
   @override
   final String? sectionId;
   @override
+  @UserTypeConverter()
+  final UserType userType;
+  @override
   @JsonKey()
   final bool isActive;
   @override
@@ -310,7 +328,7 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
 
   @override
   String toString() {
-    return 'UserProfileDto(uid: $uid, username: $username, firstName: $firstName, middleName: $middleName, lastName: $lastName, sectionId: $sectionId, isActive: $isActive, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'UserProfileDto(uid: $uid, username: $username, firstName: $firstName, middleName: $middleName, lastName: $lastName, sectionId: $sectionId, userType: $userType, isActive: $isActive, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
   }
 
   @override
@@ -329,6 +347,8 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
                 other.lastName == lastName) &&
             (identical(other.sectionId, sectionId) ||
                 other.sectionId == sectionId) &&
+            (identical(other.userType, userType) ||
+                other.userType == userType) &&
             (identical(other.isActive, isActive) ||
                 other.isActive == isActive) &&
             (identical(other.createdAt, createdAt) ||
@@ -355,6 +375,7 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
       middleName,
       lastName,
       sectionId,
+      userType,
       isActive,
       createdAt,
       createdBy,
@@ -386,6 +407,7 @@ abstract class _UserProfileDto extends UserProfileDto {
       required final String? middleName,
       required final String lastName,
       required final String? sectionId,
+      @UserTypeConverter() required final UserType userType,
       final bool isActive,
       @TimestampConverter() required final DateTime createdAt,
       final String? createdBy,
@@ -410,6 +432,9 @@ abstract class _UserProfileDto extends UserProfileDto {
   String get lastName;
   @override
   String? get sectionId;
+  @override
+  @UserTypeConverter()
+  UserType get userType;
   @override
   bool get isActive;
   @override

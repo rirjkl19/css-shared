@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:css_shared/src/models/dto/user_type.dart';
 import 'package:css_shared/src/utilities/timestamp_converter.dart';
+import 'package:css_shared/src/utilities/user_type_convert.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_profile_dto.freezed.dart';
@@ -16,6 +18,7 @@ class UserProfileDto with _$UserProfileDto {
     required String? middleName,
     required String lastName,
     required String? sectionId,
+    @UserTypeConverter() required UserType userType,
     @Default(true) bool isActive,
     @TimestampConverter() required DateTime createdAt,
     String? createdBy,

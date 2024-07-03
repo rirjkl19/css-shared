@@ -14,6 +14,7 @@ _$UserProfileDtoImpl _$$UserProfileDtoImplFromJson(Map<String, dynamic> json) =>
       middleName: json['middleName'] as String?,
       lastName: json['lastName'] as String,
       sectionId: json['sectionId'] as String?,
+      userType: const UserTypeConverter().fromJson(json['userType'] as String),
       isActive: json['isActive'] as bool? ?? true,
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
@@ -35,6 +36,7 @@ Map<String, dynamic> _$$UserProfileDtoImplToJson(
       'middleName': instance.middleName,
       'lastName': instance.lastName,
       'sectionId': instance.sectionId,
+      'userType': const UserTypeConverter().toJson(instance.userType),
       'isActive': instance.isActive,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'createdBy': instance.createdBy,
