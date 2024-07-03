@@ -29,4 +29,6 @@ class UserProfileDto with _$UserProfileDto {
   }) = _UserProfileDto;
 
   factory UserProfileDto.fromJson(Map<String, dynamic> json) => _$UserProfileDtoFromJson(json);
+
+  String get fullName => [firstName, middleName, lastName].join(' ');
 }
