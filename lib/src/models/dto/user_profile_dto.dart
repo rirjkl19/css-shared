@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:css_shared/css_shared_configuration.dart';
 import 'package:css_shared/src/models/dto/user_type.dart';
 import 'package:css_shared/src/utilities/timestamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -29,5 +30,10 @@ class UserProfileDto with _$UserProfileDto {
 
   factory UserProfileDto.fromJson(Map<String, dynamic> json) => _$UserProfileDtoFromJson(json);
 
-  String get fullName => [firstName, middleName, lastName].join(' ');
+  String get fullName {
+    return [firstName, middleName, lastName]
+        .where((e) => e.isNotNullNorEmpty)
+        .map((e) => e?.trim().capitalizeFirst())
+        .join(' ');
+  }
 }
