@@ -30,7 +30,7 @@ mixin _$UserProfileDto {
   bool get isActive => throw _privateConstructorUsedError;
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
-  String? get createdBy => throw _privateConstructorUsedError;
+  String get createdBy => throw _privateConstructorUsedError;
   @TimestampNullableConverter()
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   String? get updatedBy => throw _privateConstructorUsedError;
@@ -60,7 +60,7 @@ abstract class $UserProfileDtoCopyWith<$Res> {
       UserType userType,
       bool isActive,
       @TimestampConverter() DateTime createdAt,
-      String? createdBy,
+      String createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
       String? updatedBy,
       @TimestampNullableConverter() DateTime? deletedAt,
@@ -89,7 +89,7 @@ class _$UserProfileDtoCopyWithImpl<$Res, $Val extends UserProfileDto>
     Object? userType = null,
     Object? isActive = null,
     Object? createdAt = null,
-    Object? createdBy = freezed,
+    Object? createdBy = null,
     Object? updatedAt = freezed,
     Object? updatedBy = freezed,
     Object? deletedAt = freezed,
@@ -132,10 +132,10 @@ class _$UserProfileDtoCopyWithImpl<$Res, $Val extends UserProfileDto>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdBy: freezed == createdBy
+      createdBy: null == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -174,7 +174,7 @@ abstract class _$$UserProfileDtoImplCopyWith<$Res>
       UserType userType,
       bool isActive,
       @TimestampConverter() DateTime createdAt,
-      String? createdBy,
+      String createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
       String? updatedBy,
       @TimestampNullableConverter() DateTime? deletedAt,
@@ -201,7 +201,7 @@ class __$$UserProfileDtoImplCopyWithImpl<$Res>
     Object? userType = null,
     Object? isActive = null,
     Object? createdAt = null,
-    Object? createdBy = freezed,
+    Object? createdBy = null,
     Object? updatedAt = freezed,
     Object? updatedBy = freezed,
     Object? deletedAt = freezed,
@@ -244,10 +244,10 @@ class __$$UserProfileDtoImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdBy: freezed == createdBy
+      createdBy: null == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -281,7 +281,7 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
       required this.userType,
       this.isActive = true,
       @TimestampConverter() required this.createdAt,
-      this.createdBy,
+      required this.createdBy,
       @TimestampNullableConverter() this.updatedAt,
       this.updatedBy,
       @TimestampNullableConverter() this.deletedAt,
@@ -312,7 +312,7 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
   @TimestampConverter()
   final DateTime createdAt;
   @override
-  final String? createdBy;
+  final String createdBy;
   @override
   @TimestampNullableConverter()
   final DateTime? updatedAt;
@@ -408,7 +408,7 @@ abstract class _UserProfileDto extends UserProfileDto {
       required final UserType userType,
       final bool isActive,
       @TimestampConverter() required final DateTime createdAt,
-      final String? createdBy,
+      required final String createdBy,
       @TimestampNullableConverter() final DateTime? updatedAt,
       final String? updatedBy,
       @TimestampNullableConverter() final DateTime? deletedAt,
@@ -438,7 +438,7 @@ abstract class _UserProfileDto extends UserProfileDto {
   @TimestampConverter()
   DateTime get createdAt;
   @override
-  String? get createdBy;
+  String get createdBy;
   @override
   @TimestampNullableConverter()
   DateTime? get updatedAt;

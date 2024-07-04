@@ -20,7 +20,7 @@ class UserProfileDto with _$UserProfileDto {
     required UserType userType,
     @Default(true) bool isActive,
     @TimestampConverter() required DateTime createdAt,
-    String? createdBy,
+    required String createdBy,
     @TimestampNullableConverter() DateTime? updatedAt,
     String? updatedBy,
     @TimestampNullableConverter() DateTime? deletedAt,

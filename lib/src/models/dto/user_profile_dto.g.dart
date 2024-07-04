@@ -18,7 +18,7 @@ _$UserProfileDtoImpl _$$UserProfileDtoImplFromJson(Map<String, dynamic> json) =>
       isActive: json['isActive'] as bool? ?? true,
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
-      createdBy: json['createdBy'] as String?,
+      createdBy: json['createdBy'] as String,
       updatedAt: const TimestampNullableConverter()
           .fromJson(json['updatedAt'] as Timestamp?),
       updatedBy: json['updatedBy'] as String?,
