@@ -9,6 +9,8 @@ part of 'quiz_dto.dart';
 _$QuizImpl _$$QuizImplFromJson(Map<String, dynamic> json) => _$QuizImpl(
       id: json['id'] as String,
       lessonId: json['lessonId'] as String,
+      quarter: $enumDecodeNullable(_$QuarterEnumMap, json['quarter']) ??
+          Quarter.first,
       title: json['title'] as String,
       description: json['description'] as String?,
       createdAt:
@@ -26,6 +28,7 @@ Map<String, dynamic> _$$QuizImplToJson(_$QuizImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'lessonId': instance.lessonId,
+      'quarter': _$QuarterEnumMap[instance.quarter]!,
       'title': instance.title,
       'description': instance.description,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
@@ -37,3 +40,11 @@ Map<String, dynamic> _$$QuizImplToJson(_$QuizImpl instance) =>
           const TimestampNullableConverter().toJson(instance.deletedAt),
       'deletedBy': instance.deletedBy,
     };
+
+const _$QuarterEnumMap = {
+  Quarter.first: 'first',
+  Quarter.second: 'second',
+  Quarter.third: 'third',
+  Quarter.fourth: 'fourth',
+  Quarter.undefined: 'undefined',
+};

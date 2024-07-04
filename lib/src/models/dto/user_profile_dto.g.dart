@@ -14,7 +14,7 @@ _$UserProfileDtoImpl _$$UserProfileDtoImplFromJson(Map<String, dynamic> json) =>
       middleName: json['middleName'] as String?,
       lastName: json['lastName'] as String,
       sectionId: json['sectionId'] as String?,
-      userType: const UserTypeConverter().fromJson(json['userType'] as String),
+      userType: $enumDecode(_$UserTypeEnumMap, json['userType']),
       isActive: json['isActive'] as bool? ?? true,
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
@@ -36,7 +36,7 @@ Map<String, dynamic> _$$UserProfileDtoImplToJson(
       'middleName': instance.middleName,
       'lastName': instance.lastName,
       'sectionId': instance.sectionId,
-      'userType': const UserTypeConverter().toJson(instance.userType),
+      'userType': _$UserTypeEnumMap[instance.userType]!,
       'isActive': instance.isActive,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'createdBy': instance.createdBy,
@@ -47,3 +47,8 @@ Map<String, dynamic> _$$UserProfileDtoImplToJson(
           const TimestampNullableConverter().toJson(instance.deletedAt),
       'deletedBy': instance.deletedBy,
     };
+
+const _$UserTypeEnumMap = {
+  UserType.teacher: 'teacher',
+  UserType.student: 'student',
+};

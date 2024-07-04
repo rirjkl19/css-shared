@@ -19,6 +19,7 @@ mixin _$Quiz {
   String get id => throw _privateConstructorUsedError;
   String get lessonId => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  Quarter get quarter => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   List<Question> get questions => throw _privateConstructorUsedError;
 
@@ -35,6 +36,7 @@ abstract class $QuizCopyWith<$Res> {
       {String id,
       String lessonId,
       String title,
+      Quarter quarter,
       String? description,
       List<Question> questions});
 }
@@ -55,6 +57,7 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
     Object? id = null,
     Object? lessonId = null,
     Object? title = null,
+    Object? quarter = null,
     Object? description = freezed,
     Object? questions = null,
   }) {
@@ -71,6 +74,10 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      quarter: null == quarter
+          ? _value.quarter
+          : quarter // ignore: cast_nullable_to_non_nullable
+              as Quarter,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -94,6 +101,7 @@ abstract class _$$QuizImplCopyWith<$Res> implements $QuizCopyWith<$Res> {
       {String id,
       String lessonId,
       String title,
+      Quarter quarter,
       String? description,
       List<Question> questions});
 }
@@ -111,6 +119,7 @@ class __$$QuizImplCopyWithImpl<$Res>
     Object? id = null,
     Object? lessonId = null,
     Object? title = null,
+    Object? quarter = null,
     Object? description = freezed,
     Object? questions = null,
   }) {
@@ -127,6 +136,10 @@ class __$$QuizImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      quarter: null == quarter
+          ? _value.quarter
+          : quarter // ignore: cast_nullable_to_non_nullable
+              as Quarter,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -146,6 +159,7 @@ class _$QuizImpl implements _Quiz {
       {required this.id,
       required this.lessonId,
       required this.title,
+      required this.quarter,
       this.description,
       final List<Question> questions = const []})
       : _questions = questions;
@@ -156,6 +170,8 @@ class _$QuizImpl implements _Quiz {
   final String lessonId;
   @override
   final String title;
+  @override
+  final Quarter quarter;
   @override
   final String? description;
   final List<Question> _questions;
@@ -169,7 +185,7 @@ class _$QuizImpl implements _Quiz {
 
   @override
   String toString() {
-    return 'Quiz(id: $id, lessonId: $lessonId, title: $title, description: $description, questions: $questions)';
+    return 'Quiz(id: $id, lessonId: $lessonId, title: $title, quarter: $quarter, description: $description, questions: $questions)';
   }
 
   @override
@@ -181,6 +197,7 @@ class _$QuizImpl implements _Quiz {
             (identical(other.lessonId, lessonId) ||
                 other.lessonId == lessonId) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.quarter, quarter) || other.quarter == quarter) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             const DeepCollectionEquality()
@@ -188,8 +205,8 @@ class _$QuizImpl implements _Quiz {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, lessonId, title, description,
-      const DeepCollectionEquality().hash(_questions));
+  int get hashCode => Object.hash(runtimeType, id, lessonId, title, quarter,
+      description, const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
@@ -203,6 +220,7 @@ abstract class _Quiz implements Quiz {
       {required final String id,
       required final String lessonId,
       required final String title,
+      required final Quarter quarter,
       final String? description,
       final List<Question> questions}) = _$QuizImpl;
 
@@ -212,6 +230,8 @@ abstract class _Quiz implements Quiz {
   String get lessonId;
   @override
   String get title;
+  @override
+  Quarter get quarter;
   @override
   String? get description;
   @override

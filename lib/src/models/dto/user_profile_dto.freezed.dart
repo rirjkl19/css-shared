@@ -26,7 +26,6 @@ mixin _$UserProfileDto {
   String? get middleName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String? get sectionId => throw _privateConstructorUsedError;
-  @UserTypeConverter()
   UserType get userType => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
   @TimestampConverter()
@@ -58,7 +57,7 @@ abstract class $UserProfileDtoCopyWith<$Res> {
       String? middleName,
       String lastName,
       String? sectionId,
-      @UserTypeConverter() UserType userType,
+      UserType userType,
       bool isActive,
       @TimestampConverter() DateTime createdAt,
       String? createdBy,
@@ -172,7 +171,7 @@ abstract class _$$UserProfileDtoImplCopyWith<$Res>
       String? middleName,
       String lastName,
       String? sectionId,
-      @UserTypeConverter() UserType userType,
+      UserType userType,
       bool isActive,
       @TimestampConverter() DateTime createdAt,
       String? createdBy,
@@ -279,7 +278,7 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
       required this.middleName,
       required this.lastName,
       required this.sectionId,
-      @UserTypeConverter() required this.userType,
+      required this.userType,
       this.isActive = true,
       @TimestampConverter() required this.createdAt,
       this.createdBy,
@@ -305,7 +304,6 @@ class _$UserProfileDtoImpl extends _UserProfileDto {
   @override
   final String? sectionId;
   @override
-  @UserTypeConverter()
   final UserType userType;
   @override
   @JsonKey()
@@ -407,7 +405,7 @@ abstract class _UserProfileDto extends UserProfileDto {
       required final String? middleName,
       required final String lastName,
       required final String? sectionId,
-      @UserTypeConverter() required final UserType userType,
+      required final UserType userType,
       final bool isActive,
       @TimestampConverter() required final DateTime createdAt,
       final String? createdBy,
@@ -433,7 +431,6 @@ abstract class _UserProfileDto extends UserProfileDto {
   @override
   String? get sectionId;
   @override
-  @UserTypeConverter()
   UserType get userType;
   @override
   bool get isActive;

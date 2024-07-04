@@ -22,6 +22,7 @@ QuizDto _$QuizDtoFromJson(Map<String, dynamic> json) {
 mixin _$QuizDto {
   String get id => throw _privateConstructorUsedError;
   String get lessonId => throw _privateConstructorUsedError;
+  Quarter get quarter => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   @TimestampConverter()
@@ -47,6 +48,7 @@ abstract class $QuizDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String lessonId,
+      Quarter quarter,
       String title,
       String? description,
       @TimestampConverter() DateTime createdAt,
@@ -72,6 +74,7 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
   $Res call({
     Object? id = null,
     Object? lessonId = null,
+    Object? quarter = null,
     Object? title = null,
     Object? description = freezed,
     Object? createdAt = null,
@@ -90,6 +93,10 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
           ? _value.lessonId
           : lessonId // ignore: cast_nullable_to_non_nullable
               as String,
+      quarter: null == quarter
+          ? _value.quarter
+          : quarter // ignore: cast_nullable_to_non_nullable
+              as Quarter,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -136,6 +143,7 @@ abstract class _$$QuizImplCopyWith<$Res> implements $QuizDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String lessonId,
+      Quarter quarter,
       String title,
       String? description,
       @TimestampConverter() DateTime createdAt,
@@ -158,6 +166,7 @@ class __$$QuizImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? lessonId = null,
+    Object? quarter = null,
     Object? title = null,
     Object? description = freezed,
     Object? createdAt = null,
@@ -176,6 +185,10 @@ class __$$QuizImplCopyWithImpl<$Res>
           ? _value.lessonId
           : lessonId // ignore: cast_nullable_to_non_nullable
               as String,
+      quarter: null == quarter
+          ? _value.quarter
+          : quarter // ignore: cast_nullable_to_non_nullable
+              as Quarter,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -218,6 +231,7 @@ class _$QuizImpl extends _Quiz {
   const _$QuizImpl(
       {required this.id,
       required this.lessonId,
+      this.quarter = Quarter.first,
       required this.title,
       this.description,
       @TimestampConverter() required this.createdAt,
@@ -235,6 +249,9 @@ class _$QuizImpl extends _Quiz {
   final String id;
   @override
   final String lessonId;
+  @override
+  @JsonKey()
+  final Quarter quarter;
   @override
   final String title;
   @override
@@ -257,7 +274,7 @@ class _$QuizImpl extends _Quiz {
 
   @override
   String toString() {
-    return 'QuizDto(id: $id, lessonId: $lessonId, title: $title, description: $description, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'QuizDto(id: $id, lessonId: $lessonId, quarter: $quarter, title: $title, description: $description, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
   }
 
   @override
@@ -268,6 +285,7 @@ class _$QuizImpl extends _Quiz {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.lessonId, lessonId) ||
                 other.lessonId == lessonId) &&
+            (identical(other.quarter, quarter) || other.quarter == quarter) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -287,8 +305,19 @@ class _$QuizImpl extends _Quiz {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, lessonId, title, description,
-      createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      lessonId,
+      quarter,
+      title,
+      description,
+      createdAt,
+      createdBy,
+      updatedAt,
+      updatedBy,
+      deletedAt,
+      deletedBy);
 
   @JsonKey(ignore: true)
   @override
@@ -308,6 +337,7 @@ abstract class _Quiz extends QuizDto {
   const factory _Quiz(
       {required final String id,
       required final String lessonId,
+      final Quarter quarter,
       required final String title,
       final String? description,
       @TimestampConverter() required final DateTime createdAt,
@@ -324,6 +354,8 @@ abstract class _Quiz extends QuizDto {
   String get id;
   @override
   String get lessonId;
+  @override
+  Quarter get quarter;
   @override
   String get title;
   @override

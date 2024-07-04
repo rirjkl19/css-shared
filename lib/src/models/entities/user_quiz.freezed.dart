@@ -19,6 +19,7 @@ mixin _$UserQuiz {
   String get id => throw _privateConstructorUsedError;
   String get quizId => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
+  Quarter get quarter => throw _privateConstructorUsedError;
   int get score => throw _privateConstructorUsedError;
   int get attempt => throw _privateConstructorUsedError;
 
@@ -32,7 +33,13 @@ abstract class $UserQuizCopyWith<$Res> {
   factory $UserQuizCopyWith(UserQuiz value, $Res Function(UserQuiz) then) =
       _$UserQuizCopyWithImpl<$Res, UserQuiz>;
   @useResult
-  $Res call({String id, String quizId, String userId, int score, int attempt});
+  $Res call(
+      {String id,
+      String quizId,
+      String userId,
+      Quarter quarter,
+      int score,
+      int attempt});
 }
 
 /// @nodoc
@@ -51,6 +58,7 @@ class _$UserQuizCopyWithImpl<$Res, $Val extends UserQuiz>
     Object? id = null,
     Object? quizId = null,
     Object? userId = null,
+    Object? quarter = null,
     Object? score = null,
     Object? attempt = null,
   }) {
@@ -67,6 +75,10 @@ class _$UserQuizCopyWithImpl<$Res, $Val extends UserQuiz>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
+      quarter: null == quarter
+          ? _value.quarter
+          : quarter // ignore: cast_nullable_to_non_nullable
+              as Quarter,
       score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
@@ -87,7 +99,13 @@ abstract class _$$UserQuizImplCopyWith<$Res>
       __$$UserQuizImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String quizId, String userId, int score, int attempt});
+  $Res call(
+      {String id,
+      String quizId,
+      String userId,
+      Quarter quarter,
+      int score,
+      int attempt});
 }
 
 /// @nodoc
@@ -104,6 +122,7 @@ class __$$UserQuizImplCopyWithImpl<$Res>
     Object? id = null,
     Object? quizId = null,
     Object? userId = null,
+    Object? quarter = null,
     Object? score = null,
     Object? attempt = null,
   }) {
@@ -120,6 +139,10 @@ class __$$UserQuizImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
+      quarter: null == quarter
+          ? _value.quarter
+          : quarter // ignore: cast_nullable_to_non_nullable
+              as Quarter,
       score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
@@ -139,6 +162,7 @@ class _$UserQuizImpl implements _UserQuiz {
       {required this.id,
       required this.quizId,
       required this.userId,
+      required this.quarter,
       this.score = 0,
       this.attempt = 0});
 
@@ -149,6 +173,8 @@ class _$UserQuizImpl implements _UserQuiz {
   @override
   final String userId;
   @override
+  final Quarter quarter;
+  @override
   @JsonKey()
   final int score;
   @override
@@ -157,7 +183,7 @@ class _$UserQuizImpl implements _UserQuiz {
 
   @override
   String toString() {
-    return 'UserQuiz(id: $id, quizId: $quizId, userId: $userId, score: $score, attempt: $attempt)';
+    return 'UserQuiz(id: $id, quizId: $quizId, userId: $userId, quarter: $quarter, score: $score, attempt: $attempt)';
   }
 
   @override
@@ -168,13 +194,14 @@ class _$UserQuizImpl implements _UserQuiz {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.quarter, quarter) || other.quarter == quarter) &&
             (identical(other.score, score) || other.score == score) &&
             (identical(other.attempt, attempt) || other.attempt == attempt));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, quizId, userId, score, attempt);
+      Object.hash(runtimeType, id, quizId, userId, quarter, score, attempt);
 
   @JsonKey(ignore: true)
   @override
@@ -188,6 +215,7 @@ abstract class _UserQuiz implements UserQuiz {
       {required final String id,
       required final String quizId,
       required final String userId,
+      required final Quarter quarter,
       final int score,
       final int attempt}) = _$UserQuizImpl;
 
@@ -197,6 +225,8 @@ abstract class _UserQuiz implements UserQuiz {
   String get quizId;
   @override
   String get userId;
+  @override
+  Quarter get quarter;
   @override
   int get score;
   @override
