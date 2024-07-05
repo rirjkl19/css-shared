@@ -17,7 +17,7 @@ _$LessonImpl _$$LessonImplFromJson(Map<String, dynamic> json) => _$LessonImpl(
       fileUrl: json['fileUrl'] as String?,
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
-      createdBy: json['createdBy'] as String?,
+      createdBy: json['createdBy'] as String,
       updatedAt: const TimestampNullableConverter()
           .fromJson(json['updatedAt'] as Timestamp?),
       updatedBy: json['updatedBy'] as String?,

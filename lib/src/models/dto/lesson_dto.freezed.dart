@@ -29,7 +29,7 @@ mixin _$LessonDto {
   String? get fileUrl => throw _privateConstructorUsedError;
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
-  String? get createdBy => throw _privateConstructorUsedError;
+  String get createdBy => throw _privateConstructorUsedError;
   @TimestampNullableConverter()
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   String? get updatedBy => throw _privateConstructorUsedError;
@@ -57,7 +57,7 @@ abstract class $LessonDtoCopyWith<$Res> {
       String? videoUrl,
       String? fileUrl,
       @TimestampConverter() DateTime createdAt,
-      String? createdBy,
+      String createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
       String? updatedBy,
       @TimestampNullableConverter() DateTime? deletedAt,
@@ -85,7 +85,7 @@ class _$LessonDtoCopyWithImpl<$Res, $Val extends LessonDto>
     Object? videoUrl = freezed,
     Object? fileUrl = freezed,
     Object? createdAt = null,
-    Object? createdBy = freezed,
+    Object? createdBy = null,
     Object? updatedAt = freezed,
     Object? updatedBy = freezed,
     Object? deletedAt = freezed,
@@ -124,10 +124,10 @@ class _$LessonDtoCopyWithImpl<$Res, $Val extends LessonDto>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdBy: freezed == createdBy
+      createdBy: null == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -164,7 +164,7 @@ abstract class _$$LessonImplCopyWith<$Res> implements $LessonDtoCopyWith<$Res> {
       String? videoUrl,
       String? fileUrl,
       @TimestampConverter() DateTime createdAt,
-      String? createdBy,
+      String createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
       String? updatedBy,
       @TimestampNullableConverter() DateTime? deletedAt,
@@ -190,7 +190,7 @@ class __$$LessonImplCopyWithImpl<$Res>
     Object? videoUrl = freezed,
     Object? fileUrl = freezed,
     Object? createdAt = null,
-    Object? createdBy = freezed,
+    Object? createdBy = null,
     Object? updatedAt = freezed,
     Object? updatedBy = freezed,
     Object? deletedAt = freezed,
@@ -229,10 +229,10 @@ class __$$LessonImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      createdBy: freezed == createdBy
+      createdBy: null == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -265,7 +265,7 @@ class _$LessonImpl implements _Lesson {
       this.videoUrl,
       this.fileUrl,
       @TimestampConverter() required this.createdAt,
-      this.createdBy,
+      required this.createdBy,
       @TimestampNullableConverter() this.updatedAt,
       this.updatedBy,
       @TimestampNullableConverter() this.deletedAt,
@@ -293,7 +293,7 @@ class _$LessonImpl implements _Lesson {
   @TimestampConverter()
   final DateTime createdAt;
   @override
-  final String? createdBy;
+  final String createdBy;
   @override
   @TimestampNullableConverter()
   final DateTime? updatedAt;
@@ -381,7 +381,7 @@ abstract class _Lesson implements LessonDto {
       final String? videoUrl,
       final String? fileUrl,
       @TimestampConverter() required final DateTime createdAt,
-      final String? createdBy,
+      required final String createdBy,
       @TimestampNullableConverter() final DateTime? updatedAt,
       final String? updatedBy,
       @TimestampNullableConverter() final DateTime? deletedAt,
@@ -407,7 +407,7 @@ abstract class _Lesson implements LessonDto {
   @TimestampConverter()
   DateTime get createdAt;
   @override
-  String? get createdBy;
+  String get createdBy;
   @override
   @TimestampNullableConverter()
   DateTime? get updatedAt;
