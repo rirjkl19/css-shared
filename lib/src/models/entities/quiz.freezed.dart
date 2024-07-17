@@ -154,7 +154,7 @@ class __$$QuizImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$QuizImpl implements _Quiz {
+class _$QuizImpl extends _Quiz {
   const _$QuizImpl(
       {required this.id,
       required this.lessonId,
@@ -162,7 +162,8 @@ class _$QuizImpl implements _Quiz {
       required this.quarter,
       this.description,
       final List<Question> questions = const []})
-      : _questions = questions;
+      : _questions = questions,
+        super._();
 
   @override
   final String id;
@@ -215,7 +216,7 @@ class _$QuizImpl implements _Quiz {
       __$$QuizImplCopyWithImpl<_$QuizImpl>(this, _$identity);
 }
 
-abstract class _Quiz implements Quiz {
+abstract class _Quiz extends Quiz {
   const factory _Quiz(
       {required final String id,
       required final String lessonId,
@@ -223,6 +224,7 @@ abstract class _Quiz implements Quiz {
       required final Quarter quarter,
       final String? description,
       final List<Question> questions}) = _$QuizImpl;
+  const _Quiz._() : super._();
 
   @override
   String get id;
