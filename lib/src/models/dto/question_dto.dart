@@ -14,6 +14,7 @@ class QuestionDto with _$QuestionDto {
     required String id,
     required String quizId,
     required String label,
+    @Default(0) int order,
     @Default(QuestionType.undefined) QuestionType type,
     @Default([]) List<String> categories,
     @TimestampConverter() required DateTime createdAt,

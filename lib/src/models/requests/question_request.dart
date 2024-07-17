@@ -8,6 +8,7 @@ class QuestionRequest with _$QuestionRequest {
   const factory QuestionRequest({
     required String id,
     required String label,
+    @Default(0) int order,
     @Default(QuestionType.oneAnswer) QuestionType type,
     @Default([]) List<String> categories,
     @Default([]) List<ChoiceRequest> choices,

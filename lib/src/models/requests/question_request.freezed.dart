@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$QuestionRequest {
   String get id => throw _privateConstructorUsedError;
   String get label => throw _privateConstructorUsedError;
+  int get order => throw _privateConstructorUsedError;
   QuestionType get type => throw _privateConstructorUsedError;
   List<String> get categories => throw _privateConstructorUsedError;
   List<ChoiceRequest> get choices => throw _privateConstructorUsedError;
@@ -36,6 +37,7 @@ abstract class $QuestionRequestCopyWith<$Res> {
   $Res call(
       {String id,
       String label,
+      int order,
       QuestionType type,
       List<String> categories,
       List<ChoiceRequest> choices});
@@ -56,6 +58,7 @@ class _$QuestionRequestCopyWithImpl<$Res, $Val extends QuestionRequest>
   $Res call({
     Object? id = null,
     Object? label = null,
+    Object? order = null,
     Object? type = null,
     Object? categories = null,
     Object? choices = null,
@@ -69,6 +72,10 @@ class _$QuestionRequestCopyWithImpl<$Res, $Val extends QuestionRequest>
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -96,6 +103,7 @@ abstract class _$$QuestionRequestImplCopyWith<$Res>
   $Res call(
       {String id,
       String label,
+      int order,
       QuestionType type,
       List<String> categories,
       List<ChoiceRequest> choices});
@@ -114,6 +122,7 @@ class __$$QuestionRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? label = null,
+    Object? order = null,
     Object? type = null,
     Object? categories = null,
     Object? choices = null,
@@ -127,6 +136,10 @@ class __$$QuestionRequestImplCopyWithImpl<$Res>
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -149,6 +162,7 @@ class _$QuestionRequestImpl implements _QuestionRequest {
   const _$QuestionRequestImpl(
       {required this.id,
       required this.label,
+      this.order = 0,
       this.type = QuestionType.oneAnswer,
       final List<String> categories = const [],
       final List<ChoiceRequest> choices = const []})
@@ -159,6 +173,9 @@ class _$QuestionRequestImpl implements _QuestionRequest {
   final String id;
   @override
   final String label;
+  @override
+  @JsonKey()
+  final int order;
   @override
   @JsonKey()
   final QuestionType type;
@@ -182,7 +199,7 @@ class _$QuestionRequestImpl implements _QuestionRequest {
 
   @override
   String toString() {
-    return 'QuestionRequest(id: $id, label: $label, type: $type, categories: $categories, choices: $choices)';
+    return 'QuestionRequest(id: $id, label: $label, order: $order, type: $type, categories: $categories, choices: $choices)';
   }
 
   @override
@@ -192,6 +209,7 @@ class _$QuestionRequestImpl implements _QuestionRequest {
             other is _$QuestionRequestImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.label, label) || other.label == label) &&
+            (identical(other.order, order) || other.order == order) &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
@@ -203,6 +221,7 @@ class _$QuestionRequestImpl implements _QuestionRequest {
       runtimeType,
       id,
       label,
+      order,
       type,
       const DeepCollectionEquality().hash(_categories),
       const DeepCollectionEquality().hash(_choices));
@@ -219,6 +238,7 @@ abstract class _QuestionRequest implements QuestionRequest {
   const factory _QuestionRequest(
       {required final String id,
       required final String label,
+      final int order,
       final QuestionType type,
       final List<String> categories,
       final List<ChoiceRequest> choices}) = _$QuestionRequestImpl;
@@ -227,6 +247,8 @@ abstract class _QuestionRequest implements QuestionRequest {
   String get id;
   @override
   String get label;
+  @override
+  int get order;
   @override
   QuestionType get type;
   @override

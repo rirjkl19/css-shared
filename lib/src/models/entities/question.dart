@@ -10,6 +10,7 @@ class Question with _$Question {
     required String quizId,
     required String label,
     required QuestionType type,
+    @Default(0) int order,
     @Default([]) List<String> categories,
     @Default([]) List<Choice> choices,
   }) = _Question;

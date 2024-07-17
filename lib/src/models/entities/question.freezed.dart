@@ -20,6 +20,7 @@ mixin _$Question {
   String get quizId => throw _privateConstructorUsedError;
   String get label => throw _privateConstructorUsedError;
   QuestionType get type => throw _privateConstructorUsedError;
+  int get order => throw _privateConstructorUsedError;
   List<String> get categories => throw _privateConstructorUsedError;
   List<Choice> get choices => throw _privateConstructorUsedError;
 
@@ -38,6 +39,7 @@ abstract class $QuestionCopyWith<$Res> {
       String quizId,
       String label,
       QuestionType type,
+      int order,
       List<String> categories,
       List<Choice> choices});
 }
@@ -59,6 +61,7 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
     Object? quizId = null,
     Object? label = null,
     Object? type = null,
+    Object? order = null,
     Object? categories = null,
     Object? choices = null,
   }) {
@@ -79,6 +82,10 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as QuestionType,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -104,6 +111,7 @@ abstract class _$$QuestionImplCopyWith<$Res>
       String quizId,
       String label,
       QuestionType type,
+      int order,
       List<String> categories,
       List<Choice> choices});
 }
@@ -123,6 +131,7 @@ class __$$QuestionImplCopyWithImpl<$Res>
     Object? quizId = null,
     Object? label = null,
     Object? type = null,
+    Object? order = null,
     Object? categories = null,
     Object? choices = null,
   }) {
@@ -143,6 +152,10 @@ class __$$QuestionImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as QuestionType,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -163,6 +176,7 @@ class _$QuestionImpl implements _Question {
       required this.quizId,
       required this.label,
       required this.type,
+      this.order = 0,
       final List<String> categories = const [],
       final List<Choice> choices = const []})
       : _categories = categories,
@@ -176,6 +190,9 @@ class _$QuestionImpl implements _Question {
   final String label;
   @override
   final QuestionType type;
+  @override
+  @JsonKey()
+  final int order;
   final List<String> _categories;
   @override
   @JsonKey()
@@ -196,7 +213,7 @@ class _$QuestionImpl implements _Question {
 
   @override
   String toString() {
-    return 'Question(id: $id, quizId: $quizId, label: $label, type: $type, categories: $categories, choices: $choices)';
+    return 'Question(id: $id, quizId: $quizId, label: $label, type: $type, order: $order, categories: $categories, choices: $choices)';
   }
 
   @override
@@ -208,6 +225,7 @@ class _$QuestionImpl implements _Question {
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.order, order) || other.order == order) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._choices, _choices));
@@ -220,6 +238,7 @@ class _$QuestionImpl implements _Question {
       quizId,
       label,
       type,
+      order,
       const DeepCollectionEquality().hash(_categories),
       const DeepCollectionEquality().hash(_choices));
 
@@ -236,6 +255,7 @@ abstract class _Question implements Question {
       required final String quizId,
       required final String label,
       required final QuestionType type,
+      final int order,
       final List<String> categories,
       final List<Choice> choices}) = _$QuestionImpl;
 
@@ -247,6 +267,8 @@ abstract class _Question implements Question {
   String get label;
   @override
   QuestionType get type;
+  @override
+  int get order;
   @override
   List<String> get categories;
   @override

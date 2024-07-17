@@ -11,6 +11,7 @@ _$QuestionImpl _$$QuestionImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       quizId: json['quizId'] as String,
       label: json['label'] as String,
+      order: (json['order'] as num?)?.toInt() ?? 0,
       type: $enumDecodeNullable(_$QuestionTypeEnumMap, json['type']) ??
           QuestionType.undefined,
       categories: (json['categories'] as List<dynamic>?)
@@ -33,6 +34,7 @@ Map<String, dynamic> _$$QuestionImplToJson(_$QuestionImpl instance) =>
       'id': instance.id,
       'quizId': instance.quizId,
       'label': instance.label,
+      'order': instance.order,
       'type': _$QuestionTypeEnumMap[instance.type]!,
       'categories': instance.categories,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),

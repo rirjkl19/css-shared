@@ -23,6 +23,7 @@ mixin _$QuestionDto {
   String get id => throw _privateConstructorUsedError;
   String get quizId => throw _privateConstructorUsedError;
   String get label => throw _privateConstructorUsedError;
+  int get order => throw _privateConstructorUsedError;
   QuestionType get type => throw _privateConstructorUsedError;
   List<String> get categories => throw _privateConstructorUsedError;
   @TimestampConverter()
@@ -51,6 +52,7 @@ abstract class $QuestionDtoCopyWith<$Res> {
       {String id,
       String quizId,
       String label,
+      int order,
       QuestionType type,
       List<String> categories,
       @TimestampConverter() DateTime createdAt,
@@ -77,6 +79,7 @@ class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto>
     Object? id = null,
     Object? quizId = null,
     Object? label = null,
+    Object? order = null,
     Object? type = null,
     Object? categories = null,
     Object? createdAt = null,
@@ -99,6 +102,10 @@ class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto>
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -147,6 +154,7 @@ abstract class _$$QuestionImplCopyWith<$Res>
       {String id,
       String quizId,
       String label,
+      int order,
       QuestionType type,
       List<String> categories,
       @TimestampConverter() DateTime createdAt,
@@ -171,6 +179,7 @@ class __$$QuestionImplCopyWithImpl<$Res>
     Object? id = null,
     Object? quizId = null,
     Object? label = null,
+    Object? order = null,
     Object? type = null,
     Object? categories = null,
     Object? createdAt = null,
@@ -193,6 +202,10 @@ class __$$QuestionImplCopyWithImpl<$Res>
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -236,6 +249,7 @@ class _$QuestionImpl extends _Question {
       {required this.id,
       required this.quizId,
       required this.label,
+      this.order = 0,
       this.type = QuestionType.undefined,
       final List<String> categories = const [],
       @TimestampConverter() required this.createdAt,
@@ -256,6 +270,9 @@ class _$QuestionImpl extends _Question {
   final String quizId;
   @override
   final String label;
+  @override
+  @JsonKey()
+  final int order;
   @override
   @JsonKey()
   final QuestionType type;
@@ -286,7 +303,7 @@ class _$QuestionImpl extends _Question {
 
   @override
   String toString() {
-    return 'QuestionDto(id: $id, quizId: $quizId, label: $label, type: $type, categories: $categories, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'QuestionDto(id: $id, quizId: $quizId, label: $label, order: $order, type: $type, categories: $categories, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
   }
 
   @override
@@ -297,6 +314,7 @@ class _$QuestionImpl extends _Question {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             (identical(other.label, label) || other.label == label) &&
+            (identical(other.order, order) || other.order == order) &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
@@ -321,6 +339,7 @@ class _$QuestionImpl extends _Question {
       id,
       quizId,
       label,
+      order,
       type,
       const DeepCollectionEquality().hash(_categories),
       createdAt,
@@ -349,6 +368,7 @@ abstract class _Question extends QuestionDto {
       {required final String id,
       required final String quizId,
       required final String label,
+      final int order,
       final QuestionType type,
       final List<String> categories,
       @TimestampConverter() required final DateTime createdAt,
@@ -368,6 +388,8 @@ abstract class _Question extends QuestionDto {
   String get quizId;
   @override
   String get label;
+  @override
+  int get order;
   @override
   QuestionType get type;
   @override
