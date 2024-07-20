@@ -27,6 +27,7 @@ mixin _$LessonDto {
   String? get thumbnailUrl => throw _privateConstructorUsedError;
   String? get videoUrl => throw _privateConstructorUsedError;
   String? get fileUrl => throw _privateConstructorUsedError;
+  bool get isViewed => throw _privateConstructorUsedError;
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get createdBy => throw _privateConstructorUsedError;
@@ -56,6 +57,7 @@ abstract class $LessonDtoCopyWith<$Res> {
       String? thumbnailUrl,
       String? videoUrl,
       String? fileUrl,
+      bool isViewed,
       @TimestampConverter() DateTime createdAt,
       String createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
@@ -84,6 +86,7 @@ class _$LessonDtoCopyWithImpl<$Res, $Val extends LessonDto>
     Object? thumbnailUrl = freezed,
     Object? videoUrl = freezed,
     Object? fileUrl = freezed,
+    Object? isViewed = null,
     Object? createdAt = null,
     Object? createdBy = null,
     Object? updatedAt = freezed,
@@ -120,6 +123,10 @@ class _$LessonDtoCopyWithImpl<$Res, $Val extends LessonDto>
           ? _value.fileUrl
           : fileUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      isViewed: null == isViewed
+          ? _value.isViewed
+          : isViewed // ignore: cast_nullable_to_non_nullable
+              as bool,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -163,6 +170,7 @@ abstract class _$$LessonImplCopyWith<$Res> implements $LessonDtoCopyWith<$Res> {
       String? thumbnailUrl,
       String? videoUrl,
       String? fileUrl,
+      bool isViewed,
       @TimestampConverter() DateTime createdAt,
       String createdBy,
       @TimestampNullableConverter() DateTime? updatedAt,
@@ -189,6 +197,7 @@ class __$$LessonImplCopyWithImpl<$Res>
     Object? thumbnailUrl = freezed,
     Object? videoUrl = freezed,
     Object? fileUrl = freezed,
+    Object? isViewed = null,
     Object? createdAt = null,
     Object? createdBy = null,
     Object? updatedAt = freezed,
@@ -225,6 +234,10 @@ class __$$LessonImplCopyWithImpl<$Res>
           ? _value.fileUrl
           : fileUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      isViewed: null == isViewed
+          ? _value.isViewed
+          : isViewed // ignore: cast_nullable_to_non_nullable
+              as bool,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -264,6 +277,7 @@ class _$LessonImpl implements _Lesson {
       this.thumbnailUrl,
       this.videoUrl,
       this.fileUrl,
+      this.isViewed = false,
       @TimestampConverter() required this.createdAt,
       required this.createdBy,
       @TimestampNullableConverter() this.updatedAt,
@@ -290,6 +304,9 @@ class _$LessonImpl implements _Lesson {
   @override
   final String? fileUrl;
   @override
+  @JsonKey()
+  final bool isViewed;
+  @override
   @TimestampConverter()
   final DateTime createdAt;
   @override
@@ -307,7 +324,7 @@ class _$LessonImpl implements _Lesson {
 
   @override
   String toString() {
-    return 'LessonDto(id: $id, title: $title, description: $description, quarter: $quarter, thumbnailUrl: $thumbnailUrl, videoUrl: $videoUrl, fileUrl: $fileUrl, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'LessonDto(id: $id, title: $title, description: $description, quarter: $quarter, thumbnailUrl: $thumbnailUrl, videoUrl: $videoUrl, fileUrl: $fileUrl, isViewed: $isViewed, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
   }
 
   @override
@@ -325,6 +342,8 @@ class _$LessonImpl implements _Lesson {
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.fileUrl, fileUrl) || other.fileUrl == fileUrl) &&
+            (identical(other.isViewed, isViewed) ||
+                other.isViewed == isViewed) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.createdBy, createdBy) ||
@@ -350,6 +369,7 @@ class _$LessonImpl implements _Lesson {
       thumbnailUrl,
       videoUrl,
       fileUrl,
+      isViewed,
       createdAt,
       createdBy,
       updatedAt,
@@ -380,6 +400,7 @@ abstract class _Lesson implements LessonDto {
       final String? thumbnailUrl,
       final String? videoUrl,
       final String? fileUrl,
+      final bool isViewed,
       @TimestampConverter() required final DateTime createdAt,
       required final String createdBy,
       @TimestampNullableConverter() final DateTime? updatedAt,
@@ -403,6 +424,8 @@ abstract class _Lesson implements LessonDto {
   String? get videoUrl;
   @override
   String? get fileUrl;
+  @override
+  bool get isViewed;
   @override
   @TimestampConverter()
   DateTime get createdAt;

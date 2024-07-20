@@ -16,6 +16,7 @@ class LessonDto with _$LessonDto {
     String? thumbnailUrl,
     String? videoUrl,
     String? fileUrl,
+    @Default(false) bool isViewed,
     @TimestampConverter() required DateTime createdAt,
     required String createdBy,
     @TimestampNullableConverter() DateTime? updatedAt,

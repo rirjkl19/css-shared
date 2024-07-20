@@ -15,6 +15,7 @@ _$LessonImpl _$$LessonImplFromJson(Map<String, dynamic> json) => _$LessonImpl(
       thumbnailUrl: json['thumbnailUrl'] as String?,
       videoUrl: json['videoUrl'] as String?,
       fileUrl: json['fileUrl'] as String?,
+      isViewed: json['isViewed'] as bool? ?? false,
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
       createdBy: json['createdBy'] as String,
@@ -35,6 +36,7 @@ Map<String, dynamic> _$$LessonImplToJson(_$LessonImpl instance) =>
       'thumbnailUrl': instance.thumbnailUrl,
       'videoUrl': instance.videoUrl,
       'fileUrl': instance.fileUrl,
+      'isViewed': instance.isViewed,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'createdBy': instance.createdBy,
       'updatedAt':
