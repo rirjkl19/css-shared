@@ -36,4 +36,10 @@ class UserProfileDto with _$UserProfileDto {
         .map((e) => e?.trim().capitalizeFirst())
         .join(' ');
   }
+
+  String get greetName {
+    final name = firstName.capitalizeFirst();
+    final surname = lastName.capitalizeFirst()[0];
+    return '$name $surname.';
+  }
 }
