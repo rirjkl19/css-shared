@@ -34,25 +34,26 @@ When using the app for the first time. It is required to have an internet connec
 ```mermaid
 graph TB
     Start([Start])
-    Login[/Auto-Login/]
-    %% Redirect[/Redirect to Home Page/]
+    Login[Auto-Login]
+    RedirectToHome[/Redirect to Home Page/]
+    RedirectToLogin[/Redirect to Login Page/]
     Server[(Backend\nServer)]
     CheckToken{Is token valid?}
     HasInternet{Has Internet?}
-    Error[/Logout/]
+    Logout[/Logout/]
     End([End])
 
     
     Start --> Login
     Login --> HasInternet
     HasInternet --> |Yes| CheckToken
-    CheckToken --> |Yes| Redirect
-    CheckToken -.-> |Verify| Server
-    Redirect --> End
+    CheckToken --> |Yes| RedirectToHome
+    CheckToken <-.-> |Verify| Server
+    RedirectToHome --> End
     
 
-    HasInternet --> |No| Redirect
-    CheckToken --> |No| Error --> End
+    HasInternet --> |No| RedirectToHome
+    CheckToken --> |No| Logout --> RedirectToLogin --> End
 ```
 
 When the user has already logged in before, the app will automatically log in the user using the token stored in the device. This is useful for users who have already logged in before and have not logged out of the app.
