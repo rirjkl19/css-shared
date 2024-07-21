@@ -50,6 +50,7 @@ graph TB
     CONNECTOR_BB((B))
 
     Quizzes[/View Quizzes page/]
+    QuizOverview[/View Quiz Overview page/]
 
     HasMaxAttempts{Student attempted \n3 times already?}
     StartQuiz[/Start quiz/]
@@ -64,15 +65,14 @@ graph TB
         Dashboard --> Quizzes
         Quizzes --> CONNECTOR_A
 
-        CONNECTOR_AA --> StartQuiz
+        CONNECTOR_AA --> QuizOverview
+        QuizOverview --> StartQuiz
         StartQuiz --> HasMaxAttempts
         HasMaxAttempts --> |Yes| Block
-        Block --> CONNECTOR_AA
-        HasMaxAttempts --> |No| StartQuiz
-        StartQuiz --> |Yes| CONNECTOR_B
+        Block --> QuizOverview
+        HasMaxAttempts --> |No| CONNECTOR_B
         
         
-        %% StartQuiz --> QuizQuestions
         CONNECTOR_BB --> QuizQuestions
         QuizQuestions -.-> |Till all question\n is answered| QuizAnswers
         QuizAnswers -.-> QuizQuestions
