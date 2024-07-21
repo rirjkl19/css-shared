@@ -35,22 +35,24 @@ When using the app for the first time. It is required to have an internet connec
 graph TB
     Start([Start])
     Login[/Auto-Login/]
-    Redirect[/Redirect to Home Page/]
+    %% Redirect[/Redirect to Home Page/]
     Server[(Backend\nServer)]
-    Check{Is token valid?}
+    CheckToken{Is token valid?}
     HasInternet{Has Internet?}
-    Error[/Show Error Message/]
+    Error[/Logout/]
     End([End])
 
-    %% Server<-...->|Verify|Check
-    Check --> HasInternet
+    
+    Start --> Login
+    Login --> HasInternet
+    HasInternet --> |Yes| CheckToken
+    CheckToken --> |Yes| Redirect
+    CheckToken -.-> |Verify| Server
+    Redirect --> End
+    
 
-    HasInternet --> |Yes| Server
     HasInternet --> |No| Redirect
-
-    Start--> Login
-    Login --> Check --> |Yes| Redirect --> End
-    Check --> |No| Error --> End
+    CheckToken --> |No| Error --> End
 ```
 
 When the user has already logged in before, the app will automatically log in the user using the token stored in the device. This is useful for users who have already logged in before and have not logged out of the app.
