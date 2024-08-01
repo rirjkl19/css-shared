@@ -27,6 +27,10 @@ _$QuestionImpl _$$QuestionImplFromJson(Map<String, dynamic> json) =>
       deletedAt: const TimestampNullableConverter()
           .fromJson(json['deletedAt'] as Timestamp?),
       deletedBy: json['deletedBy'] as String?,
+      choices: (json['choices'] as List<dynamic>?)
+              ?.map((e) => ChoiceDto.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <ChoiceDto>[],
     );
 
 Map<String, dynamic> _$$QuestionImplToJson(_$QuestionImpl instance) =>
@@ -45,6 +49,7 @@ Map<String, dynamic> _$$QuestionImplToJson(_$QuestionImpl instance) =>
       'deletedAt':
           const TimestampNullableConverter().toJson(instance.deletedAt),
       'deletedBy': instance.deletedBy,
+      'choices': instance.choices,
     };
 
 const _$QuestionTypeEnumMap = {

@@ -1,3 +1,4 @@
+import 'package:css_shared/css_shared_models.dart';
 import 'package:css_shared/src/utilities/timestamp_converter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -7,6 +8,8 @@ part 'choice_dto.g.dart';
 
 @freezed
 class ChoiceDto with _$ChoiceDto {
+  const ChoiceDto._();
+
   const factory ChoiceDto({
     required String id,
     required String questionId,
@@ -24,4 +27,15 @@ class ChoiceDto with _$ChoiceDto {
   }) = _ChoiceDto;
 
   factory ChoiceDto.fromJson(Map<String, dynamic> json) => _$ChoiceDtoFromJson(json);
+
+  Choice toEntity() {
+    return Choice(
+      id: id,
+      questionId: questionId,
+      label: label,
+      isCorrect: isCorrect,
+      ordinal: ordinal,
+      category: category,
+    );
+  }
 }

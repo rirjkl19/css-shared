@@ -34,6 +34,8 @@ mixin _$QuizDto {
   @TimestampNullableConverter()
   DateTime? get deletedAt => throw _privateConstructorUsedError;
   String? get deletedBy => throw _privateConstructorUsedError;
+  @QuestionDtoConverter()
+  List<QuestionDto> get questions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,7 +58,8 @@ abstract class $QuizDtoCopyWith<$Res> {
       @TimestampNullableConverter() DateTime? updatedAt,
       String? updatedBy,
       @TimestampNullableConverter() DateTime? deletedAt,
-      String? deletedBy});
+      String? deletedBy,
+      @QuestionDtoConverter() List<QuestionDto> questions});
 }
 
 /// @nodoc
@@ -83,6 +86,7 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
     Object? updatedBy = freezed,
     Object? deletedAt = freezed,
     Object? deletedBy = freezed,
+    Object? questions = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -129,6 +133,10 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
           ? _value.deletedBy
           : deletedBy // ignore: cast_nullable_to_non_nullable
               as String?,
+      questions: null == questions
+          ? _value.questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<QuestionDto>,
     ) as $Val);
   }
 }
@@ -151,7 +159,8 @@ abstract class _$$QuizImplCopyWith<$Res> implements $QuizDtoCopyWith<$Res> {
       @TimestampNullableConverter() DateTime? updatedAt,
       String? updatedBy,
       @TimestampNullableConverter() DateTime? deletedAt,
-      String? deletedBy});
+      String? deletedBy,
+      @QuestionDtoConverter() List<QuestionDto> questions});
 }
 
 /// @nodoc
@@ -175,6 +184,7 @@ class __$$QuizImplCopyWithImpl<$Res>
     Object? updatedBy = freezed,
     Object? deletedAt = freezed,
     Object? deletedBy = freezed,
+    Object? questions = null,
   }) {
     return _then(_$QuizImpl(
       id: null == id
@@ -221,6 +231,10 @@ class __$$QuizImplCopyWithImpl<$Res>
           ? _value.deletedBy
           : deletedBy // ignore: cast_nullable_to_non_nullable
               as String?,
+      questions: null == questions
+          ? _value._questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<QuestionDto>,
     ));
   }
 }
@@ -239,8 +253,11 @@ class _$QuizImpl extends _Quiz {
       @TimestampNullableConverter() this.updatedAt,
       this.updatedBy,
       @TimestampNullableConverter() this.deletedAt,
-      this.deletedBy})
-      : super._();
+      this.deletedBy,
+      @QuestionDtoConverter()
+      final List<QuestionDto> questions = const <QuestionDto>[]})
+      : _questions = questions,
+        super._();
 
   factory _$QuizImpl.fromJson(Map<String, dynamic> json) =>
       _$$QuizImplFromJson(json);
@@ -271,10 +288,19 @@ class _$QuizImpl extends _Quiz {
   final DateTime? deletedAt;
   @override
   final String? deletedBy;
+  final List<QuestionDto> _questions;
+  @override
+  @JsonKey()
+  @QuestionDtoConverter()
+  List<QuestionDto> get questions {
+    if (_questions is EqualUnmodifiableListView) return _questions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
 
   @override
   String toString() {
-    return 'QuizDto(id: $id, lessonId: $lessonId, quarter: $quarter, title: $title, description: $description, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy)';
+    return 'QuizDto(id: $id, lessonId: $lessonId, quarter: $quarter, title: $title, description: $description, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, deletedAt: $deletedAt, deletedBy: $deletedBy, questions: $questions)';
   }
 
   @override
@@ -300,7 +326,9 @@ class _$QuizImpl extends _Quiz {
             (identical(other.deletedAt, deletedAt) ||
                 other.deletedAt == deletedAt) &&
             (identical(other.deletedBy, deletedBy) ||
-                other.deletedBy == deletedBy));
+                other.deletedBy == deletedBy) &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions));
   }
 
   @JsonKey(ignore: true)
@@ -317,7 +345,8 @@ class _$QuizImpl extends _Quiz {
       updatedAt,
       updatedBy,
       deletedAt,
-      deletedBy);
+      deletedBy,
+      const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
@@ -345,7 +374,8 @@ abstract class _Quiz extends QuizDto {
       @TimestampNullableConverter() final DateTime? updatedAt,
       final String? updatedBy,
       @TimestampNullableConverter() final DateTime? deletedAt,
-      final String? deletedBy}) = _$QuizImpl;
+      final String? deletedBy,
+      @QuestionDtoConverter() final List<QuestionDto> questions}) = _$QuizImpl;
   const _Quiz._() : super._();
 
   factory _Quiz.fromJson(Map<String, dynamic> json) = _$QuizImpl.fromJson;
@@ -375,6 +405,9 @@ abstract class _Quiz extends QuizDto {
   DateTime? get deletedAt;
   @override
   String? get deletedBy;
+  @override
+  @QuestionDtoConverter()
+  List<QuestionDto> get questions;
   @override
   @JsonKey(ignore: true)
   _$$QuizImplCopyWith<_$QuizImpl> get copyWith =>

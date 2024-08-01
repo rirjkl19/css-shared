@@ -158,7 +158,7 @@ class __$$QuestionRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$QuestionRequestImpl implements _QuestionRequest {
+class _$QuestionRequestImpl extends _QuestionRequest {
   const _$QuestionRequestImpl(
       {required this.id,
       required this.label,
@@ -167,7 +167,8 @@ class _$QuestionRequestImpl implements _QuestionRequest {
       final List<String> categories = const [],
       final List<ChoiceRequest> choices = const []})
       : _categories = categories,
-        _choices = choices;
+        _choices = choices,
+        super._();
 
   @override
   final String id;
@@ -234,7 +235,7 @@ class _$QuestionRequestImpl implements _QuestionRequest {
           this, _$identity);
 }
 
-abstract class _QuestionRequest implements QuestionRequest {
+abstract class _QuestionRequest extends QuestionRequest {
   const factory _QuestionRequest(
       {required final String id,
       required final String label,
@@ -242,6 +243,7 @@ abstract class _QuestionRequest implements QuestionRequest {
       final QuestionType type,
       final List<String> categories,
       final List<ChoiceRequest> choices}) = _$QuestionRequestImpl;
+  const _QuestionRequest._() : super._();
 
   @override
   String get id;

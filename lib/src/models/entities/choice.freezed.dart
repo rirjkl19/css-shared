@@ -155,14 +155,15 @@ class __$$ChoiceImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChoiceImpl implements _Choice {
+class _$ChoiceImpl extends _Choice {
   const _$ChoiceImpl(
       {required this.id,
       required this.questionId,
       this.label = '',
       this.isCorrect = false,
       this.ordinal = 0,
-      this.category});
+      this.category})
+      : super._();
 
   @override
   final String id;
@@ -212,7 +213,7 @@ class _$ChoiceImpl implements _Choice {
       __$$ChoiceImplCopyWithImpl<_$ChoiceImpl>(this, _$identity);
 }
 
-abstract class _Choice implements Choice {
+abstract class _Choice extends Choice {
   const factory _Choice(
       {required final String id,
       required final String questionId,
@@ -220,6 +221,7 @@ abstract class _Choice implements Choice {
       final bool isCorrect,
       final int ordinal,
       final String? category}) = _$ChoiceImpl;
+  const _Choice._() : super._();
 
   @override
   String get id;

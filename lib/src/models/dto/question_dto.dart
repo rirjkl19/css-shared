@@ -1,4 +1,5 @@
-import 'package:css_shared/src/models/dto/question_type.dart';
+import 'package:css_shared/css_shared_models.dart';
+import 'package:css_shared/src/utilities/choice_dto_converter.dart';
 import 'package:css_shared/src/utilities/timestamp_converter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -23,7 +24,20 @@ class QuestionDto with _$QuestionDto {
     String? updatedBy,
     @TimestampNullableConverter() DateTime? deletedAt,
     String? deletedBy,
+    @ChoiceDtoConverter() @Default(<ChoiceDto>[]) List<ChoiceDto> choices,
   }) = _Question;
 
   factory QuestionDto.fromJson(Map<String, dynamic> json) => _$QuestionDtoFromJson(json);
+
+  Question toEntity() {
+    return Question(
+      id: id,
+      quizId: quizId,
+      label: label,
+      order: order,
+      type: type,
+      categories: categories,
+      choices: choices.map((c) => c.toEntity()).toList(),
+    );
+  }
 }

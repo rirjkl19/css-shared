@@ -256,7 +256,7 @@ class __$$ChoiceDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChoiceDtoImpl implements _ChoiceDto {
+class _$ChoiceDtoImpl extends _ChoiceDto {
   const _$ChoiceDtoImpl(
       {required this.id,
       required this.questionId,
@@ -270,7 +270,8 @@ class _$ChoiceDtoImpl implements _ChoiceDto {
       @TimestampNullableConverter() this.updatedAt,
       this.updatedBy,
       @TimestampNullableConverter() this.deletedAt,
-      this.deletedBy});
+      this.deletedBy})
+      : super._();
 
   factory _$ChoiceDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChoiceDtoImplFromJson(json);
@@ -374,7 +375,7 @@ class _$ChoiceDtoImpl implements _ChoiceDto {
   }
 }
 
-abstract class _ChoiceDto implements ChoiceDto {
+abstract class _ChoiceDto extends ChoiceDto {
   const factory _ChoiceDto(
       {required final String id,
       required final String questionId,
@@ -389,6 +390,7 @@ abstract class _ChoiceDto implements ChoiceDto {
       final String? updatedBy,
       @TimestampNullableConverter() final DateTime? deletedAt,
       final String? deletedBy}) = _$ChoiceDtoImpl;
+  const _ChoiceDto._() : super._();
 
   factory _ChoiceDto.fromJson(Map<String, dynamic> json) =
       _$ChoiceDtoImpl.fromJson;

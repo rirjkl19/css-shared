@@ -22,6 +22,11 @@ _$QuizImpl _$$QuizImplFromJson(Map<String, dynamic> json) => _$QuizImpl(
       deletedAt: const TimestampNullableConverter()
           .fromJson(json['deletedAt'] as Timestamp?),
       deletedBy: json['deletedBy'] as String?,
+      questions: (json['questions'] as List<dynamic>?)
+              ?.map((e) => const QuestionDtoConverter()
+                  .fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <QuestionDto>[],
     );
 
 Map<String, dynamic> _$$QuizImplToJson(_$QuizImpl instance) =>
@@ -39,6 +44,8 @@ Map<String, dynamic> _$$QuizImplToJson(_$QuizImpl instance) =>
       'deletedAt':
           const TimestampNullableConverter().toJson(instance.deletedAt),
       'deletedBy': instance.deletedBy,
+      'questions':
+          instance.questions.map(const QuestionDtoConverter().toJson).toList(),
     };
 
 const _$QuarterEnumMap = {

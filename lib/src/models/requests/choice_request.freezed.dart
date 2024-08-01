@@ -124,12 +124,13 @@ class __$$ChoiceRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChoiceRequestImpl implements _ChoiceRequest {
+class _$ChoiceRequestImpl extends _ChoiceRequest {
   const _$ChoiceRequestImpl(
       {required this.label,
       this.isCorrect = false,
       this.ordinal = 0,
-      this.category});
+      this.category})
+      : super._();
 
   @override
   final String label;
@@ -171,12 +172,13 @@ class _$ChoiceRequestImpl implements _ChoiceRequest {
       __$$ChoiceRequestImplCopyWithImpl<_$ChoiceRequestImpl>(this, _$identity);
 }
 
-abstract class _ChoiceRequest implements ChoiceRequest {
+abstract class _ChoiceRequest extends ChoiceRequest {
   const factory _ChoiceRequest(
       {required final String label,
       final bool isCorrect,
       final int ordinal,
       final String? category}) = _$ChoiceRequestImpl;
+  const _ChoiceRequest._() : super._();
 
   @override
   String get label;
