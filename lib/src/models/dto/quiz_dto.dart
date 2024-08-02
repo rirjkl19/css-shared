@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:css_shared/css_shared_models.dart';
-import 'package:css_shared/src/utilities/question_dto_converter.dart';
 import 'package:css_shared/src/utilities/timestamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

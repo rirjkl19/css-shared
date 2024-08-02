@@ -35,6 +35,7 @@ mixin _$QuestionDto {
   @TimestampNullableConverter()
   DateTime? get deletedAt => throw _privateConstructorUsedError;
   String? get deletedBy => throw _privateConstructorUsedError;
+  @ChoiceDtoConverter()
   List<ChoiceDto> get choices => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -62,7 +63,7 @@ abstract class $QuestionDtoCopyWith<$Res> {
       String? updatedBy,
       @TimestampNullableConverter() DateTime? deletedAt,
       String? deletedBy,
-      List<ChoiceDto> choices});
+      @ChoiceDtoConverter() List<ChoiceDto> choices});
 }
 
 /// @nodoc
@@ -170,7 +171,7 @@ abstract class _$$QuestionImplCopyWith<$Res>
       String? updatedBy,
       @TimestampNullableConverter() DateTime? deletedAt,
       String? deletedBy,
-      List<ChoiceDto> choices});
+      @ChoiceDtoConverter() List<ChoiceDto> choices});
 }
 
 /// @nodoc
@@ -271,6 +272,7 @@ class _$QuestionImpl extends _Question {
       this.updatedBy,
       @TimestampNullableConverter() this.deletedAt,
       this.deletedBy,
+      @ChoiceDtoConverter()
       final List<ChoiceDto> choices = const <ChoiceDto>[]})
       : _categories = categories,
         _choices = choices,
@@ -318,6 +320,7 @@ class _$QuestionImpl extends _Question {
   final List<ChoiceDto> _choices;
   @override
   @JsonKey()
+  @ChoiceDtoConverter()
   List<ChoiceDto> get choices {
     if (_choices is EqualUnmodifiableListView) return _choices;
     // ignore: implicit_dynamic_type
@@ -402,7 +405,7 @@ abstract class _Question extends QuestionDto {
       final String? updatedBy,
       @TimestampNullableConverter() final DateTime? deletedAt,
       final String? deletedBy,
-      final List<ChoiceDto> choices}) = _$QuestionImpl;
+      @ChoiceDtoConverter() final List<ChoiceDto> choices}) = _$QuestionImpl;
   const _Question._() : super._();
 
   factory _Question.fromJson(Map<String, dynamic> json) =
@@ -436,6 +439,7 @@ abstract class _Question extends QuestionDto {
   @override
   String? get deletedBy;
   @override
+  @ChoiceDtoConverter()
   List<ChoiceDto> get choices;
   @override
   @JsonKey(ignore: true)

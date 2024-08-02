@@ -12,5 +12,6 @@ class UserQuiz with _$UserQuiz {
     required Quarter quarter,
     @Default(0) int score,
     @Default(0) int attempt,
+    @Default([]) List<UserChoice> choices,
   }) = _UserQuiz;
 }

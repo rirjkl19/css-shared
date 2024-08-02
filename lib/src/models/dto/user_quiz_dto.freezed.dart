@@ -27,6 +27,8 @@ mixin _$UserQuizDto {
   int get attempt => throw _privateConstructorUsedError;
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
+  @UserChoiceDtoConverter()
+  List<UserChoiceDto> get choices => throw _privateConstructorUsedError;
   String get createdBy => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,6 +50,7 @@ abstract class $UserQuizDtoCopyWith<$Res> {
       int score,
       int attempt,
       @TimestampConverter() DateTime createdAt,
+      @UserChoiceDtoConverter() List<UserChoiceDto> choices,
       String createdBy});
 }
 
@@ -70,6 +73,7 @@ class _$UserQuizDtoCopyWithImpl<$Res, $Val extends UserQuizDto>
     Object? score = null,
     Object? attempt = null,
     Object? createdAt = null,
+    Object? choices = null,
     Object? createdBy = null,
   }) {
     return _then(_value.copyWith(
@@ -97,6 +101,10 @@ class _$UserQuizDtoCopyWithImpl<$Res, $Val extends UserQuizDto>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      choices: null == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<UserChoiceDto>,
       createdBy: null == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
@@ -120,6 +128,7 @@ abstract class _$$UserQuizDtoImplCopyWith<$Res>
       int score,
       int attempt,
       @TimestampConverter() DateTime createdAt,
+      @UserChoiceDtoConverter() List<UserChoiceDto> choices,
       String createdBy});
 }
 
@@ -140,6 +149,7 @@ class __$$UserQuizDtoImplCopyWithImpl<$Res>
     Object? score = null,
     Object? attempt = null,
     Object? createdAt = null,
+    Object? choices = null,
     Object? createdBy = null,
   }) {
     return _then(_$UserQuizDtoImpl(
@@ -167,6 +177,10 @@ class __$$UserQuizDtoImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      choices: null == choices
+          ? _value._choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<UserChoiceDto>,
       createdBy: null == createdBy
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
@@ -185,7 +199,9 @@ class _$UserQuizDtoImpl implements _UserQuizDto {
       this.score = 0,
       this.attempt = 0,
       @TimestampConverter() required this.createdAt,
-      required this.createdBy});
+      @UserChoiceDtoConverter() final List<UserChoiceDto> choices = const [],
+      required this.createdBy})
+      : _choices = choices;
 
   factory _$UserQuizDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserQuizDtoImplFromJson(json);
@@ -205,12 +221,22 @@ class _$UserQuizDtoImpl implements _UserQuizDto {
   @override
   @TimestampConverter()
   final DateTime createdAt;
+  final List<UserChoiceDto> _choices;
+  @override
+  @JsonKey()
+  @UserChoiceDtoConverter()
+  List<UserChoiceDto> get choices {
+    if (_choices is EqualUnmodifiableListView) return _choices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_choices);
+  }
+
   @override
   final String createdBy;
 
   @override
   String toString() {
-    return 'UserQuizDto(id: $id, quizId: $quizId, userId: $userId, score: $score, attempt: $attempt, createdAt: $createdAt, createdBy: $createdBy)';
+    return 'UserQuizDto(id: $id, quizId: $quizId, userId: $userId, score: $score, attempt: $attempt, createdAt: $createdAt, choices: $choices, createdBy: $createdBy)';
   }
 
   @override
@@ -225,6 +251,7 @@ class _$UserQuizDtoImpl implements _UserQuizDto {
             (identical(other.attempt, attempt) || other.attempt == attempt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            const DeepCollectionEquality().equals(other._choices, _choices) &&
             (identical(other.createdBy, createdBy) ||
                 other.createdBy == createdBy));
   }
@@ -232,7 +259,15 @@ class _$UserQuizDtoImpl implements _UserQuizDto {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, quizId, userId, score, attempt, createdAt, createdBy);
+      runtimeType,
+      id,
+      quizId,
+      userId,
+      score,
+      attempt,
+      createdAt,
+      const DeepCollectionEquality().hash(_choices),
+      createdBy);
 
   @JsonKey(ignore: true)
   @override
@@ -256,6 +291,7 @@ abstract class _UserQuizDto implements UserQuizDto {
       final int score,
       final int attempt,
       @TimestampConverter() required final DateTime createdAt,
+      @UserChoiceDtoConverter() final List<UserChoiceDto> choices,
       required final String createdBy}) = _$UserQuizDtoImpl;
 
   factory _UserQuizDto.fromJson(Map<String, dynamic> json) =
@@ -274,6 +310,9 @@ abstract class _UserQuizDto implements UserQuizDto {
   @override
   @TimestampConverter()
   DateTime get createdAt;
+  @override
+  @UserChoiceDtoConverter()
+  List<UserChoiceDto> get choices;
   @override
   String get createdBy;
   @override

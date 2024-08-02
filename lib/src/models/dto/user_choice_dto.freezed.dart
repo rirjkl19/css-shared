@@ -176,7 +176,7 @@ class __$$UserChoiceDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserChoiceDtoImpl implements _UserChoiceDto {
+class _$UserChoiceDtoImpl extends _UserChoiceDto {
   const _$UserChoiceDtoImpl(
       {required this.id,
       required this.quizId,
@@ -184,7 +184,8 @@ class _$UserChoiceDtoImpl implements _UserChoiceDto {
       required this.userQuizId,
       required this.questionId,
       this.category,
-      this.ordinal = 1});
+      this.ordinal = 1})
+      : super._();
 
   factory _$UserChoiceDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserChoiceDtoImplFromJson(json);
@@ -247,7 +248,7 @@ class _$UserChoiceDtoImpl implements _UserChoiceDto {
   }
 }
 
-abstract class _UserChoiceDto implements UserChoiceDto {
+abstract class _UserChoiceDto extends UserChoiceDto {
   const factory _UserChoiceDto(
       {required final String id,
       required final String quizId,
@@ -256,6 +257,7 @@ abstract class _UserChoiceDto implements UserChoiceDto {
       required final String questionId,
       final String? category,
       final int ordinal}) = _$UserChoiceDtoImpl;
+  const _UserChoiceDto._() : super._();
 
   factory _UserChoiceDto.fromJson(Map<String, dynamic> json) =
       _$UserChoiceDtoImpl.fromJson;

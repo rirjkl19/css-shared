@@ -22,6 +22,7 @@ mixin _$UserQuiz {
   Quarter get quarter => throw _privateConstructorUsedError;
   int get score => throw _privateConstructorUsedError;
   int get attempt => throw _privateConstructorUsedError;
+  List<UserChoice> get choices => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserQuizCopyWith<UserQuiz> get copyWith =>
@@ -39,7 +40,8 @@ abstract class $UserQuizCopyWith<$Res> {
       String userId,
       Quarter quarter,
       int score,
-      int attempt});
+      int attempt,
+      List<UserChoice> choices});
 }
 
 /// @nodoc
@@ -61,6 +63,7 @@ class _$UserQuizCopyWithImpl<$Res, $Val extends UserQuiz>
     Object? quarter = null,
     Object? score = null,
     Object? attempt = null,
+    Object? choices = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -87,6 +90,10 @@ class _$UserQuizCopyWithImpl<$Res, $Val extends UserQuiz>
           ? _value.attempt
           : attempt // ignore: cast_nullable_to_non_nullable
               as int,
+      choices: null == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<UserChoice>,
     ) as $Val);
   }
 }
@@ -105,7 +112,8 @@ abstract class _$$UserQuizImplCopyWith<$Res>
       String userId,
       Quarter quarter,
       int score,
-      int attempt});
+      int attempt,
+      List<UserChoice> choices});
 }
 
 /// @nodoc
@@ -125,6 +133,7 @@ class __$$UserQuizImplCopyWithImpl<$Res>
     Object? quarter = null,
     Object? score = null,
     Object? attempt = null,
+    Object? choices = null,
   }) {
     return _then(_$UserQuizImpl(
       id: null == id
@@ -151,6 +160,10 @@ class __$$UserQuizImplCopyWithImpl<$Res>
           ? _value.attempt
           : attempt // ignore: cast_nullable_to_non_nullable
               as int,
+      choices: null == choices
+          ? _value._choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<UserChoice>,
     ));
   }
 }
@@ -164,7 +177,9 @@ class _$UserQuizImpl implements _UserQuiz {
       required this.userId,
       required this.quarter,
       this.score = 0,
-      this.attempt = 0});
+      this.attempt = 0,
+      final List<UserChoice> choices = const []})
+      : _choices = choices;
 
   @override
   final String id;
@@ -180,10 +195,18 @@ class _$UserQuizImpl implements _UserQuiz {
   @override
   @JsonKey()
   final int attempt;
+  final List<UserChoice> _choices;
+  @override
+  @JsonKey()
+  List<UserChoice> get choices {
+    if (_choices is EqualUnmodifiableListView) return _choices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_choices);
+  }
 
   @override
   String toString() {
-    return 'UserQuiz(id: $id, quizId: $quizId, userId: $userId, quarter: $quarter, score: $score, attempt: $attempt)';
+    return 'UserQuiz(id: $id, quizId: $quizId, userId: $userId, quarter: $quarter, score: $score, attempt: $attempt, choices: $choices)';
   }
 
   @override
@@ -196,12 +219,13 @@ class _$UserQuizImpl implements _UserQuiz {
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.quarter, quarter) || other.quarter == quarter) &&
             (identical(other.score, score) || other.score == score) &&
-            (identical(other.attempt, attempt) || other.attempt == attempt));
+            (identical(other.attempt, attempt) || other.attempt == attempt) &&
+            const DeepCollectionEquality().equals(other._choices, _choices));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, quizId, userId, quarter, score, attempt);
+  int get hashCode => Object.hash(runtimeType, id, quizId, userId, quarter,
+      score, attempt, const DeepCollectionEquality().hash(_choices));
 
   @JsonKey(ignore: true)
   @override
@@ -217,7 +241,8 @@ abstract class _UserQuiz implements UserQuiz {
       required final String userId,
       required final Quarter quarter,
       final int score,
-      final int attempt}) = _$UserQuizImpl;
+      final int attempt,
+      final List<UserChoice> choices}) = _$UserQuizImpl;
 
   @override
   String get id;
@@ -231,6 +256,8 @@ abstract class _UserQuiz implements UserQuiz {
   int get score;
   @override
   int get attempt;
+  @override
+  List<UserChoice> get choices;
   @override
   @JsonKey(ignore: true)
   _$$UserQuizImplCopyWith<_$UserQuizImpl> get copyWith =>

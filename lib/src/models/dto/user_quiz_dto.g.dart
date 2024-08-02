@@ -15,6 +15,11 @@ _$UserQuizDtoImpl _$$UserQuizDtoImplFromJson(Map<String, dynamic> json) =>
       attempt: (json['attempt'] as num?)?.toInt() ?? 0,
       createdAt:
           const TimestampConverter().fromJson(json['createdAt'] as Timestamp),
+      choices: (json['choices'] as List<dynamic>?)
+              ?.map((e) => const UserChoiceDtoConverter()
+                  .fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       createdBy: json['createdBy'] as String,
     );
 
@@ -26,5 +31,7 @@ Map<String, dynamic> _$$UserQuizDtoImplToJson(_$UserQuizDtoImpl instance) =>
       'score': instance.score,
       'attempt': instance.attempt,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
+      'choices':
+          instance.choices.map(const UserChoiceDtoConverter().toJson).toList(),
       'createdBy': instance.createdBy,
     };
